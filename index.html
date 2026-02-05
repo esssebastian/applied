@@ -414,13 +414,13 @@ scrollbar-width: none;
                         <div class="col-span-1 lg:col-span-2 group overflow-hidden lg:p-10 min-h-[400px] flex flex-col md:flex-row transition-transform hover:scale-[1.01] duration-300 bg-[#4e40ca] border-[#4e40ca] border rounded-[32px] pt-6 pr-6 pb-6 pl-6 relative items-center justify-between">
                             
                             <!-- Text Side -->
-                            <div class="relative z-20 flex flex-col h-full justify-between w-full md:w-1/2 mb-8 md:mb-0">
-                                <div class="">
-                                    <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 text-white">
+                            <div class="relative z-20 flex flex-col h-full justify-center w-full md:w-1/2 mb-8 md:mb-0">
+                                <div class="text-center md:text-left">
+                                    <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 text-white mx-auto md:mx-0">
                                         <iconify-icon icon="lucide:layers" width="24"></iconify-icon>
                                     </div>
                                     <h3 class="lg:text-3xl text-2xl font-bold text-white font-montserrat mb-3">Intelligent Voice Agents</h3>
-                                    <p class="text-indigo-100 text-sm lg:text-base mb-6 leading-relaxed max-w-xs">
+                                    <p class="text-indigo-100 text-sm lg:text-base mb-6 leading-relaxed max-w-md mx-auto md:mx-0">
 24/7 conversational AI that handles customer inquiries, qualifies leads, and schedules appointments without human intervention.
                                     </p>
                                 </div>
@@ -428,58 +428,52 @@ scrollbar-width: none;
                             </div>
 
                             <!-- Visual Side (Call Flow) -->
-                            <div class="relative w-full md:w-1/2 h-full min-h-[220px] flex items-center justify-end">
+                            <div class="relative w-full md:w-1/2 h-full min-h-[220px] flex items-center justify-center md:justify-end">
                                 <!-- Tilted Container for dynamic effect -->
-                                <div class="w-full md:absolute md:right-[-40px] md:w-[110%] group-hover:scale-105 group-hover:-rotate-1 transition-all duration-500 ease-out">
-                                    <div class="bg-white/90 backdrop-blur rounded-xl shadow-lg border border-indigo-400/50 p-3 md:p-4">
+                                <div class="w-full max-w-sm md:absolute md:right-[-40px] md:w-[110%] group-hover:scale-105 group-hover:-rotate-1 transition-all duration-500 ease-out">
+                                    <div class="bg-white/90 backdrop-blur rounded-xl shadow-lg border border-indigo-400/50 p-4 md:p-5">
                                         <!-- Call Flow Process -->
-                                        <div class="space-y-2 md:space-y-3">
+                                        <div class="space-y-3 text-center">
                                             <!-- Step 1: Incoming Call -->
-                                            <div class="flex items-center gap-2">
-                                                <span class="text-base md:text-lg">📞</span>
-                                                <div class="flex-1 min-w-0">
-                                                    <div class="text-xs md:text-xs font-semibold text-stone-900">Incoming Call</div>
-                                                </div>
+                                            <div class="flex flex-col items-center gap-1">
+                                                <span class="text-2xl md:text-3xl">📞</span>
+                                                <div class="text-sm md:text-base font-semibold text-stone-900">Incoming Call</div>
                                             </div>
                                             <div class="flex justify-center">
-                                                <iconify-icon icon="lucide:arrow-down" width="14" class="md:w-4 text-[#4e40ca]"></iconify-icon>
+                                                <iconify-icon icon="lucide:arrow-down" width="20" class="text-[#4e40ca]"></iconify-icon>
                                             </div>
                                             <!-- Step 2: AI Agent Answers -->
-                                            <div class="flex items-center gap-2">
-                                                <span class="text-base md:text-lg">🤖</span>
-                                                <div class="flex-1 min-w-0">
-                                                    <div class="text-xs md:text-xs font-semibold text-stone-900">AI Agent Answers</div>
-                                                    <div class="text-[10px] md:text-[10px] text-stone-500 italic break-words">"Hi, this is Applied Inc..."</div>
-                                                </div>
+                                            <div class="flex flex-col items-center gap-1">
+                                                <span class="text-2xl md:text-3xl">🤖</span>
+                                                <div class="text-sm md:text-base font-semibold text-stone-900">AI Agent Answers</div>
+                                                <div class="text-xs md:text-sm text-stone-500 italic max-w-xs">"Hi, this is Applied Inc..."</div>
                                             </div>
                                             <div class="flex justify-center">
-                                                <iconify-icon icon="lucide:arrow-down" width="14" class="md:w-4 text-[#4e40ca]"></iconify-icon>
+                                                <iconify-icon icon="lucide:arrow-down" width="20" class="text-[#4e40ca]"></iconify-icon>
                                             </div>
                                             <!-- Step 3: Conversation -->
-                                            <div class="flex items-center gap-2">
-                                                <span class="text-base md:text-lg">💬</span>
-                                                <div class="flex-1 min-w-0">
-                                                    <div class="text-xs md:text-xs font-semibold text-stone-900">Conversation</div>
-                                                    <div class="text-[10px] md:text-[10px] text-stone-500 italic break-words">"I'd like to book an appointment"</div>
-                                                </div>
+                                            <div class="flex flex-col items-center gap-1">
+                                                <span class="text-2xl md:text-3xl">💬</span>
+                                                <div class="text-sm md:text-base font-semibold text-stone-900">Conversation</div>
+                                                <div class="text-xs md:text-sm text-stone-500 italic max-w-xs">"I'd like to book an appointment"</div>
                                             </div>
                                             <div class="flex justify-center">
-                                                <iconify-icon icon="lucide:arrow-down" width="14" class="md:w-4 text-[#4e40ca]"></iconify-icon>
+                                                <iconify-icon icon="lucide:arrow-down" width="20" class="text-[#4e40ca]"></iconify-icon>
                                             </div>
                                             <!-- Step 4: Action Completed -->
-                                            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-2 md:p-3">
-                                                <div class="flex items-center gap-2 mb-1 md:mb-2">
-                                                    <span class="text-base md:text-lg">✅</span>
-                                                    <div class="text-xs md:text-xs font-semibold text-emerald-900">Action Completed</div>
+                                            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-3 md:p-4">
+                                                <div class="flex flex-col items-center gap-1 mb-2">
+                                                    <span class="text-2xl md:text-3xl">✅</span>
+                                                    <div class="text-sm md:text-base font-semibold text-emerald-900">Action Completed</div>
                                                 </div>
-                                                <div class="pl-5 md:pl-7 space-y-1 text-[10px] md:text-[10px] text-emerald-700">
-                                                    <div class="flex items-center gap-1">
+                                                <div class="space-y-2 text-xs md:text-sm text-emerald-700">
+                                                    <div class="flex items-center justify-center gap-2">
                                                         <span>📅</span>
-                                                        <span class="break-words">Appointment booked for Wed 2pm</span>
+                                                        <span>Appointment booked for Wed 2pm</span>
                                                     </div>
-                                                    <div class="flex items-center gap-1">
+                                                    <div class="flex items-center justify-center gap-2">
                                                         <span>✉️</span>
-                                                        <span class="break-words">Confirmation sent</span>
+                                                        <span>Confirmation sent</span>
                                                     </div>
                                                 </div>
                                             </div>
