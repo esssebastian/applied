@@ -1,4 +1,4 @@
-<html lang="en" class="scroll-smooth"><head><meta charset="UTF-8">
+<html lang="en" class="scroll-smooth" id="html-root"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Applied AI - Your Business, Powered by Intelligent Systems.</title>
 <link rel="icon" type="image/png" href="https://appliedinc.ca/img/logoa.png">
@@ -6,6 +6,7 @@
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <script>
 tailwind.config = {
+darkMode: 'class',
 theme: {
 extend: {
 fontFamily: {
@@ -104,6 +105,42 @@ display: none;
 -ms-overflow-style: none;
 scrollbar-width: none;
 }
+
+/* Dark mode overrides */
+html.dark { color-scheme: dark; }
+html.dark body { background: #000 !important; color: #e5e5e5 !important; }
+html.dark .glass-panel { background: rgba(0,0,0,0.6) !important; backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-color: rgba(255,255,255,0.1) !important; }
+html.dark .grid-lines { background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px); }
+html.dark .bg-neutral-100 { background: #000 !important; }
+html.dark .bg-white { background: #0a0a0a !important; }
+html.dark .bg-neutral-50 { background: #171717 !important; }
+html.dark .text-neutral-900, html.dark .text-stone-900, html.dark .text-slate-950 { color: #fff !important; }
+html.dark .text-stone-500, html.dark .text-stone-600, html.dark .text-stone-700 { color: #a3a3a3 !important; }
+html.dark .text-stone-400 { color: #737373 !important; }
+html.dark nav a { color: #a3a3a3 !important; }
+html.dark nav a:hover { color: #fff !important; }
+html.dark .border-stone-200, html.dark .border-stone-300, html.dark .border-indigo-100 { border-color: rgba(255,255,255,0.1) !important; }
+html.dark .border-stone-800 { border-color: rgba(255,255,255,0.15) !important; }
+html.dark .shadow-\[0_-20px_40px_rgba\(0\,0\,0\,0\.02\)\] { box-shadow: 0 -20px 40px rgba(0,0,0,0.3) !important; }
+html.dark .from-white { --tw-gradient-from: #0a0a0a !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+html.dark .bg-indigo-50\/80 { background: rgba(78,64,202,0.1) !important; }
+html.dark .border-indigo-100 { border-color: rgba(78,64,202,0.3) !important; }
+html.dark .bg-indigo-50 { background: rgba(78,64,202,0.1) !important; }
+html.dark .border-stone-200\/50 { border-color: rgba(255,255,255,0.1) !important; }
+html.dark .bg-indigo-100, html.dark .bg-red-100, html.dark .bg-blue-100, html.dark .bg-emerald-100 { background: rgba(255,255,255,0.08) !important; }
+html.dark .border-indigo-100 { border-color: rgba(255,255,255,0.1) !important; }
+html.dark .bg-indigo-50 { background: rgba(255,255,255,0.05) !important; }
+html.dark .border-indigo-100 { border-color: rgba(255,255,255,0.08) !important; }
+html.dark button.border-stone-300 { border-color: rgba(255,255,255,0.2) !important; color: #e5e5e5 !important; }
+html.dark button.border-stone-300:hover { background: rgba(255,255,255,0.1) !important; }
+html.dark .shadow-md, html.dark .shadow-xl { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2) !important; }
+html.dark .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -4px rgba(0,0,0,0.2) !important; }
+html.dark .bg-stone-900 { background: #171717 !important; }
+html.dark .bg-emerald-50 { background: rgba(34,197,94,0.2) !important; }
+html.dark .border-emerald-200 { border-color: rgba(34,197,94,0.3) !important; }
+html.dark .text-emerald-900 { color: #86efac !important; }
+html.dark .grayscale { opacity: 0.6; }
+html.dark .hover\:grayscale-0:hover { opacity: 1; }
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap">
 <script src="https://www.aura.build/FxFilter.js"></script>
@@ -114,7 +151,7 @@ scrollbar-width: none;
     <header class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-stone-200/50">
         <div class="max-w-[1600px] mx-auto px-6 lg:px-12 h-16 lg:h-20 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="block group text-2xl lg:text-3xl font-semibold tracking-tighter font-google-sans-flex">
+            <a href="https://appliedinc.ca/" class="block group text-2xl lg:text-3xl font-semibold tracking-tighter font-google-sans-flex">
                 Applied<span class="transition-colors text-[#4e40ca]">AI</span>
             </a>
 
@@ -126,10 +163,19 @@ scrollbar-width: none;
             </nav>
 
             <!-- Actions -->
-            <div class="flex gap-x-8 items-center">
-                <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer" class="bg-[#4e40ca] hover:bg-[#3a2fb0] text-white transition-all font-medium px-4 py-2 lg:px-5 lg:py-2.5 rounded-lg text-xs lg:text-sm flex items-center gap-2 group shadow-md shadow-[#4e40ca]/20">
+            <div class="flex gap-x-6 items-center ml-auto sm:ml-0">
+                <!-- Theme Toggle - centered pill on mobile (no CTA), compact on desktop -->
+                <button type="button" id="theme-toggle" class="theme-toggle flex items-center gap-1.5 rounded-full p-1.5 sm:p-1 bg-stone-200/80 dark:bg-white/5 border border-stone-300/60 dark:border-white/10 hover:border-stone-400/60 dark:hover:border-white/20 transition-colors w-[72px] sm:w-16 min-h-[44px] sm:min-h-0 justify-center sm:justify-start" title="Toggle dark mode" aria-label="Toggle dark mode">
+                    <span id="theme-sun" class="theme-btn flex items-center justify-center w-7 h-7 sm:w-5 sm:h-5 rounded-full bg-white dark:bg-transparent shadow-sm text-amber-500 dark:text-zinc-500 flex-shrink-0" data-theme="light" title="Light mode">
+                        <iconify-icon icon="heroicons:sun" width="18"></iconify-icon>
+                    </span>
+                    <span id="theme-moon" class="theme-btn flex items-center justify-center w-7 h-7 sm:w-5 sm:h-5 rounded-full text-stone-400 dark:text-indigo-300 dark:bg-[#4e40ca]/30 dark:shadow-sm flex-shrink-0" data-theme="dark" title="Dark mode">
+                        <iconify-icon icon="heroicons:moon" width="18"></iconify-icon>
+                    </span>
+                </button>
+                <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer" class="hidden sm:flex bg-[#4e40ca] hover:bg-[#3a2fb0] text-white transition-all font-medium px-4 py-2 lg:px-5 lg:py-2.5 rounded-lg text-xs lg:text-sm items-center gap-2 group shadow-md shadow-[#4e40ca]/20">
                     Book Strategy Call
-                    <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                    <iconify-icon icon="heroicons:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
                 </a>
             </div>
         </div>
@@ -200,7 +246,7 @@ scrollbar-width: none;
                         <!-- Card 1: Cloud Status -->
                         <div class="glass-panel p-4 rounded-xl flex items-center gap-4 animate-float shadow-lg lg:ml-0 max-w-sm mx-auto w-full" style="animation-delay: 0s;">
                             <div class="w-10 h-10 rounded-full flex items-center justify-center border shrink-0 bg-indigo-50 text-[#4e40ca] border-indigo-100">
-                                <iconify-icon icon="lucide:bot" width="20" class=""></iconify-icon>
+                                <iconify-icon icon="heroicons:cpu-chip" width="20" class=""></iconify-icon>
                             </div>
                             <div class="flex-1 min-w-0">
                                 <div class="flex justify-between items-center mb-0.5">
@@ -212,7 +258,7 @@ scrollbar-width: none;
                         <!-- Card 2: Marketing Attribution -->
                         <div class="glass-panel p-4 rounded-xl flex items-center gap-4 animate-float shadow-lg lg:ml-8 max-w-sm mx-auto w-full" style="animation-delay: 1.5s;">
                             <div class="flex shrink-0 bg-[#4e40ca] w-10 h-10 border rounded-full items-center justify-center text-white border-[#3a2fb0]">
-                                <iconify-icon icon="lucide:phone" width="20"></iconify-icon>
+                                <iconify-icon icon="heroicons:phone" width="20"></iconify-icon>
                             </div>
                             <div class="flex-1 min-w-0">
                                 <div class="flex justify-between items-center mb-0.5">
@@ -224,7 +270,7 @@ scrollbar-width: none;
                         <!-- Card 3: Integration -->
                         <div class="glass-panel p-4 rounded-xl flex items-center gap-4 animate-float shadow-lg lg:-ml-4 max-w-sm mx-auto w-full" style="animation-delay: 2.5s;">
                             <div class="w-10 h-10 rounded-full text-[#4e40ca] flex items-center justify-center border shrink-0 bg-stone-900 border-stone-800">
-                                <iconify-icon icon="lucide:monitor" width="20" class=""></iconify-icon>
+                                <iconify-icon icon="heroicons:computer-desktop" width="20" class=""></iconify-icon>
                             </div>
                             <div class="flex-1 min-w-0">
                                 <div class="flex justify-between items-center mb-0.5">
@@ -248,20 +294,20 @@ scrollbar-width: none;
                         <div class="bg-gradient-to-l to-transparent w-12 lg:w-40 h-full z-10 absolute top-0 right-0 from-white"></div>
                         <div class="flex w-max animate-marquee hover:pause-animation">
                             <div class="flex items-center gap-12 lg:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:cloud-lightning"></iconify-icon> SaaSforce</div>
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:cpu" class=""></iconify-icon> TechFlow</div>
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:database"></iconify-icon> DataScale</div>
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:globe"></iconify-icon> VentureCorp</div>
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:server"></iconify-icon> CloudNine</div>
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:zap"></iconify-icon> BoltSoft</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:bolt"></iconify-icon> SaaSforce</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:cpu-chip" class=""></iconify-icon> TechFlow</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:circle-stack"></iconify-icon> DataScale</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:globe-alt"></iconify-icon> VentureCorp</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:server-stack"></iconify-icon> CloudNine</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:bolt"></iconify-icon> BoltSoft</div>
                             </div>
                             <div class="flex items-center gap-12 lg:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-500 ml-12 lg:ml-24">
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:cloud-lightning"></iconify-icon> SaaSforce</div>
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:cpu"></iconify-icon> TechFlow</div>
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:database"></iconify-icon> DataScale</div>
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:globe"></iconify-icon> VentureCorp</div>
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:server"></iconify-icon> CloudNine</div>
-                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="lucide:zap"></iconify-icon> BoltSoft</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:bolt"></iconify-icon> SaaSforce</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:cpu-chip"></iconify-icon> TechFlow</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:circle-stack"></iconify-icon> DataScale</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:globe-alt"></iconify-icon> VentureCorp</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:server-stack"></iconify-icon> CloudNine</div>
+                                <div class="flex items-center gap-2 text-xl lg:text-2xl font-bold font-sans"><iconify-icon icon="heroicons:bolt"></iconify-icon> BoltSoft</div>
                             </div>
                         </div>
                     </div>
@@ -307,29 +353,53 @@ scrollbar-width: none;
                         </h2>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                        <!-- Card 1: Founder -->
-                        <div class="p-8 bg-neutral-50 border border-stone-200 rounded-2xl hover:shadow-md transition-shadow">
-                            <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center mb-6">
-                                <iconify-icon icon="lucide:alert-triangle" width="24"></iconify-icon>
+                        <!-- Card 1: Drowning in Repetition -->
+                        <div class="group rounded-2xl overflow-hidden bg-stone-100 dark:bg-stone-900/80 border border-stone-200 dark:border-white/10 hover:border-stone-300 dark:hover:border-white/15 hover:shadow-xl transition-all duration-300">
+                            <div class="h-36 flex items-center justify-center bg-stone-200/50 dark:bg-black/30 relative overflow-hidden">
+                                <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle at 50% 50%, rgba(78,64,202,0.2) 0%, transparent 70%);"></div>
+                                <div class="relative flex items-center justify-center gap-3">
+                                    <div class="w-10 h-10 rounded-full border-2 border-[#4e40ca]/50 flex items-center justify-center"><iconify-icon icon="heroicons:arrow-path" width="18" class="text-[#4e40ca]"></iconify-icon></div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-stone-400/50 dark:border-stone-500 flex items-center justify-center text-xs text-stone-500">↻</div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-stone-400/50 dark:border-stone-500 flex items-center justify-center text-xs text-stone-500">↻</div>
+                                    <div class="w-8 h-8 rounded-full border-2 border-stone-400/50 dark:border-stone-500 flex items-center justify-center text-xs text-stone-500">↻</div>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-semibold text-stone-900 mb-2">Drowning in Repetition</h3>
-                            <p class="text-stone-500 text-sm leading-relaxed">Your team spends hours each day on repetitive administrative tasks that could be automated—draining productivity and morale.</p>
+                            <div class="p-6">
+                                <span class="inline-block px-2.5 py-1 rounded-md bg-[#4e40ca] text-white text-xs font-semibold tracking-wider mb-4">PROBLEM 1</span>
+                                <h3 class="text-lg font-semibold text-stone-900 dark:text-white mb-2">Drowning in Repetition</h3>
+                                <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">Your team spends hours each day on repetitive administrative tasks that could be automated—draining productivity and morale.</p>
+                            </div>
                         </div>
-                         <!-- Card 2: CTO -->
-                         <div class="p-8 bg-neutral-50 border border-stone-200 rounded-2xl hover:shadow-md transition-shadow">
-                            <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
-                                <iconify-icon icon="lucide:eye" width="24" class=""></iconify-icon>
+                         <!-- Card 2: Lost Opportunities -->
+                         <div class="group rounded-2xl overflow-hidden bg-stone-100 dark:bg-stone-900/80 border border-stone-200 dark:border-white/10 hover:border-stone-300 dark:hover:border-white/15 hover:shadow-xl transition-all duration-300">
+                            <div class="h-36 flex items-center justify-center p-4 bg-stone-200/50 dark:bg-black/30">
+                                <div class="w-full space-y-2">
+                                    <div class="flex items-center justify-between text-sm text-stone-500 dark:text-stone-400"><span>Lead In</span><span class="text-[10px]">PENDING</span></div>
+                                    <div class="flex items-center justify-between text-sm text-stone-500 dark:text-stone-400"><span>Follow-up</span><span class="text-[10px]">PENDING</span></div>
+                                    <div class="flex items-center justify-between text-sm px-3 py-1.5 rounded-lg bg-[#4e40ca]/20 dark:bg-[#4e40ca]/30 border border-[#4e40ca]/30"><span class="text-stone-900 dark:text-white">Qualification</span><span class="text-[10px] font-medium text-[#4e40ca]">LOST</span></div>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2 text-stone-900">Lost Opportunities</h3>
-                            <p class="text-stone-500 text-sm leading-relaxed">Promising leads are slipping through the cracks because manual follow-up systems can't keep pace with your growing pipeline.</p>
+                            <div class="p-6">
+                                <span class="inline-block px-2.5 py-1 rounded-md bg-[#4e40ca] text-white text-xs font-semibold tracking-wider mb-4">PROBLEM 2</span>
+                                <h3 class="text-lg font-semibold mb-2 text-stone-900 dark:text-white">Lost Opportunities</h3>
+                                <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">Promising leads are slipping through the cracks because manual follow-up systems can't keep pace with your growing pipeline.</p>
+                            </div>
                         </div>
-                         <!-- Card 3: Marketer -->
-                         <div class="p-8 bg-neutral-50 border border-stone-200 rounded-2xl hover:shadow-md transition-shadow">
-                            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center mb-6">
-                                <iconify-icon icon="lucide:bar-chart-2" width="24"></iconify-icon>
+                         <!-- Card 3: The Hiring Trap -->
+                         <div class="group rounded-2xl overflow-hidden bg-stone-100 dark:bg-stone-900/80 border border-stone-200 dark:border-white/10 hover:border-stone-300 dark:hover:border-white/15 hover:shadow-xl transition-all duration-300">
+                            <div class="h-36 flex flex-col items-center justify-center p-4 bg-stone-200/50 dark:bg-black/30">
+                                <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mb-3 w-full"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> HEADCOUNT COST</div>
+                                <svg viewBox="0 0 120 40" class="w-full h-14 text-[#4e40ca]">
+                                    <path d="M0 35 Q15 30 30 25 T60 20 T90 15 T120 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+                                    <circle cx="90" cy="15" r="4" fill="currentColor"/>
+                                    <path d="M0 35 Q15 30 30 25 T60 20 T90 15 T120 10" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-dasharray="4 4" opacity="0.4"/>
+                                </svg>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2 text-stone-900">The Hiring Trap</h3>
-                            <p class="text-stone-500 text-sm leading-relaxed">You can't scale operations without continuously hiring more people, increasing overhead and complexity with every new customer.</p>
+                            <div class="p-6">
+                                <span class="inline-block px-2.5 py-1 rounded-md bg-[#4e40ca] text-white text-xs font-semibold tracking-wider mb-4">PROBLEM 3</span>
+                                <h3 class="text-lg font-semibold mb-2 text-stone-900 dark:text-white">The Hiring Trap</h3>
+                                <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed">You can't scale operations without continuously hiring more people, increasing overhead and complexity with every new customer.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -346,7 +416,7 @@ scrollbar-width: none;
                             <!-- Visual Anchor (Top) -->
                             <div class="z-20 mt-auto relative">
                                 <div class="flex text-white bg-white/10 w-12 h-12 border-white/10 border rounded-2xl mb-6 backdrop-blur-md items-center justify-center">
-                                    <iconify-icon icon="lucide:bot" width="24" class=""></iconify-icon>
+                                    <iconify-icon icon="heroicons:cpu-chip" width="24" class=""></iconify-icon>
                                 </div>
                                 <h3 class="lg:text-3xl text-2xl font-bold text-white font-montserrat mb-3">AI Process Automation</h3>
                                 <p class="text-stone-300 mb-6 text-sm lg:text-base leading-relaxed max-w-sm">
@@ -433,7 +503,7 @@ scrollbar-width: none;
                                         <div class="mt-4 pt-3 border-t border-stone-700">
                                             <div class="flex items-center justify-center gap-1 text-[#4e40ca] text-[9px]">
                                                 <span>See How It Works</span>
-                                                <iconify-icon icon="lucide:arrow-right" width="10"></iconify-icon>
+                                                <iconify-icon icon="heroicons:arrow-right" width="10"></iconify-icon>
                                             </div>
                                         </div>
                                     </div>
@@ -448,7 +518,7 @@ scrollbar-width: none;
                             <div class="relative z-20 flex flex-col h-full justify-center w-full md:w-1/2 mb-8 md:mb-0">
                                 <div class="text-center md:text-left">
                                     <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-6 text-white mx-auto md:mx-0">
-                                        <iconify-icon icon="lucide:phone" width="24"></iconify-icon>
+                                        <iconify-icon icon="heroicons:phone" width="24"></iconify-icon>
                                     </div>
                                     <h3 class="lg:text-3xl text-2xl font-bold text-white font-montserrat mb-3">Intelligent Voice Agents</h3>
                                     <p class="text-indigo-100 text-sm lg:text-base mb-6 leading-relaxed max-w-md mx-auto md:mx-0">
@@ -473,7 +543,7 @@ scrollbar-width: none;
                                                     </div>
                                             <!-- Arrow 1 -->
                                             <div class="flex justify-center py-0.5">
-                                                <iconify-icon icon="lucide:arrow-down" width="14" class="text-[#4e40ca]"></iconify-icon>
+                                                <iconify-icon icon="heroicons:chevron-down" width="14" class="text-[#4e40ca]"></iconify-icon>
                                                 </div>
                                             <!-- Step 2: Conversation -->
                                             <div class="flex flex-col items-center gap-0.5 text-center">
@@ -483,7 +553,7 @@ scrollbar-width: none;
                                             </div>
                                             <!-- Arrow 2 -->
                                             <div class="flex justify-center py-0.5">
-                                                <iconify-icon icon="lucide:arrow-down" width="14" class="text-[#4e40ca]"></iconify-icon>
+                                                <iconify-icon icon="heroicons:chevron-down" width="14" class="text-[#4e40ca]"></iconify-icon>
                                                     </div>
                                             <!-- Step 3: Action Completed -->
                                             <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-1.5 md:p-2">
@@ -505,7 +575,7 @@ scrollbar-width: none;
                             <div class="relative z-20 flex flex-col justify-center w-full md:w-1/2 h-full mb-8 md:mb-0">
                                 <div>
                                     <div class="w-12 h-12 rounded-xl bg-white/60 backdrop-blur flex items-center justify-center mb-6 text-[#4e40ca]">
-                                        <iconify-icon icon="lucide:monitor" width="24"></iconify-icon>
+                                        <iconify-icon icon="heroicons:computer-desktop" width="24"></iconify-icon>
                                     </div>
                                     <h3 class="lg:text-2xl text-xl font-bold text-stone-900 font-montserrat mb-3">Custom Software Development</h3>
                                     <p class="text-stone-700 text-sm lg:text-base mb-6 leading-relaxed max-w-sm">
@@ -535,7 +605,7 @@ scrollbar-width: none;
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center gap-1 text-[#4e40ca]">
-                                                    <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                                                    <iconify-icon icon="heroicons:arrow-right" width="16"></iconify-icon>
                                                 </div>
                                                 <div class="flex items-start gap-1.5 flex-1 text-right">
                                                     <span class="text-lg">✅</span>
@@ -554,7 +624,7 @@ scrollbar-width: none;
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center gap-1 text-[#4e40ca]">
-                                                    <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                                                    <iconify-icon icon="heroicons:arrow-right" width="16"></iconify-icon>
                                                 </div>
                                                 <div class="flex items-start gap-1.5 flex-1 text-right">
                                                     <span class="text-lg">✅</span>
@@ -573,7 +643,7 @@ scrollbar-width: none;
                                                     </div>
                                                 </div>
                                                 <div class="flex items-center gap-1 text-[#4e40ca]">
-                                                    <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon>
+                                                    <iconify-icon icon="heroicons:arrow-right" width="16"></iconify-icon>
                                                 </div>
                                                 <div class="flex items-start gap-1.5 flex-1 text-right">
                                                     <span class="text-lg">✅</span>
@@ -619,7 +689,7 @@ scrollbar-width: none;
                             <!-- Arrow (Desktop only) -->
                             <div class="hidden lg:block absolute top-12 right-0 translate-x-1/2 -translate-y-1/2 z-20">
                                 <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-sm">
-                                    <iconify-icon icon="lucide:arrow-right" width="16" class="text-[#4e40ca]"></iconify-icon>
+                                    <iconify-icon icon="heroicons:arrow-right" width="16" class="text-[#4e40ca]"></iconify-icon>
                                 </div>
                             </div>
                         </div>
@@ -632,7 +702,7 @@ scrollbar-width: none;
                             <!-- Arrow (Desktop only) -->
                             <div class="hidden lg:block absolute top-12 right-0 translate-x-1/2 -translate-y-1/2 z-20">
                                 <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-sm">
-                                    <iconify-icon icon="lucide:arrow-right" width="16" class="text-[#4e40ca]"></iconify-icon>
+                                    <iconify-icon icon="heroicons:arrow-right" width="16" class="text-[#4e40ca]"></iconify-icon>
                                 </div>
                             </div>
                         </div>
@@ -645,7 +715,7 @@ scrollbar-width: none;
                             <!-- Arrow (Desktop only) -->
                             <div class="hidden lg:block absolute top-12 right-0 translate-x-1/2 -translate-y-1/2 z-20">
                                 <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-sm">
-                                    <iconify-icon icon="lucide:arrow-right" width="16" class="text-[#4e40ca]"></iconify-icon>
+                                    <iconify-icon icon="heroicons:arrow-right" width="16" class="text-[#4e40ca]"></iconify-icon>
                                 </div>
                             </div>
                         </div>
@@ -670,7 +740,7 @@ scrollbar-width: none;
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
                             <div class="space-y-3">
                                 <div class="mx-auto w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center text-stone-900 mb-2">
-                                    <iconify-icon icon="lucide:clock" width="24"></iconify-icon>
+                                    <iconify-icon icon="heroicons:clock" width="24"></iconify-icon>
                                 </div>
                                 <h3 class="text-lg font-bold text-stone-900">40-60%
  Time Savings
@@ -680,7 +750,7 @@ scrollbar-width: none;
                             </div>
                             <div class="space-y-3">
                                 <div class="mx-auto w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center text-stone-900 mb-2">
-                                    <iconify-icon icon="lucide:activity" width="24"></iconify-icon>
+                                    <iconify-icon icon="heroicons:signal" width="24"></iconify-icon>
                                 </div>
                                 <h3 class="text-lg font-bold text-stone-900">24/7
   Always Available
@@ -690,7 +760,7 @@ scrollbar-width: none;
                             </div>
                             <div class="space-y-3">
                                 <div class="mx-auto w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center text-stone-900 mb-2">
-                                    <iconify-icon icon="lucide:trending-up" width="24"></iconify-icon>
+                                    <iconify-icon icon="heroicons:arrow-trending-up" width="24"></iconify-icon>
                                 </div>
                                 <h3 class="text-lg font-bold text-stone-900">100%
  Scalable Growth
@@ -722,7 +792,7 @@ scrollbar-width: none;
 
                             <button class="group flex items-center gap-3 bg-[#4e40ca] hover:bg-[#3a2fb0] transition-all text-sm font-semibold rounded-full px-8 py-4 w-fit shadow-lg hover:shadow-[0_0_20px_rgba(78,64,202,0.3)] text-white">
                                 <span>Read Case Studies</span>
-                                <iconify-icon icon="lucide:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                                <iconify-icon icon="heroicons:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
                             </button>
                             </div>
                             <div class="flex lg:w-[50%] lg:pt-24 lg:pr-16 lg:pl-0 lg:items-center lg:pb-34 pt-8 pr-4 pb-16 pl-4 relative items-center">
@@ -852,6 +922,34 @@ scrollbar-width: none;
     </div>
 
     <script>
+        (function() {
+            var html = document.documentElement;
+            var stored = localStorage.getItem('theme');
+            if (stored === 'light') {
+                html.classList.remove('dark');
+            } else {
+                html.classList.add('dark');
+            }
+        })();
+        document.getElementById('theme-toggle')?.addEventListener('click', function() {
+            var html = document.documentElement;
+            var isDark = html.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+        document.querySelectorAll('.theme-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var theme = this.getAttribute('data-theme');
+                var html = document.documentElement;
+                if (theme === 'dark') {
+                    html.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    html.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
         function handleSpotlight(e) {
             const rect = e.currentTarget.getBoundingClientRect();
             const x = e.clientX - rect.left;

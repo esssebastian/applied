@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applied AI - Your Business, Powered by Intelligent Systems</title>
+    <link rel="icon" type="image/png" href="https://appliedinc.ca/img/logoa.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                fontFamily: { sans: ['Geist', 'system-ui', 'sans-serif'] },
+                colors: {
+                    brand: { primary: '#4e40ca', light: '#6355d8', dark: '#3a2fb0' }
+                }
+            }
+        }
+    }
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap">
+    <style>
+        body { font-family: 'Geist', system-ui, sans-serif; }
+        .dark-grid {
+            background-size: 60px 60px;
+            background-image: 
+                linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+        }
+        .gradient-glow {
+            background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(78, 64, 202, 0.25), transparent);
+        }
+        .card-border {
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.02);
+        }
+        .card-border:hover {
+            border-color: rgba(78, 64, 202, 0.4);
+            background: rgba(78, 64, 202, 0.05);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #fff 30%, rgba(255,255,255,0.7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-black text-white antialiased selection:bg-[#4e40ca] selection:text-white overflow-x-hidden">
+
+    <!-- Subtle grid + gradient background -->
+    <div class="fixed inset-0 dark-grid gradient-glow pointer-events-none -z-10"></div>
+
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 backdrop-blur-xl bg-black/50">
+        <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+            <a href="https://appliedinc.ca/" class="text-lg font-semibold tracking-tight">
+                Applied<span class="text-[#4e40ca]">AI</span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-400">
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#cases" class="hover:text-white transition-colors">Case Studies</a>
+                <a href="#" class="hover:text-white transition-colors">Login</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle Slider -->
+                <a href="index.html" class="theme-toggle flex items-center gap-1.5 rounded-full pl-1.5 pr-1.5 py-1 bg-white/5 border border-white/10 hover:border-white/20 transition-colors w-16" title="Switch to light mode" onclick="localStorage.setItem('theme','light');">
+                    <span class="flex items-center justify-center w-6 h-6 rounded-full text-zinc-500 flex-shrink-0" title="Light">
+                        <iconify-icon icon="ph:sun" width="14"></iconify-icon>
+                    </span>
+                    <span class="flex items-center justify-center w-6 h-6 rounded-full bg-[#4e40ca]/40 text-indigo-200 shadow-sm flex-shrink-0" title="Dark (current)">
+                        <iconify-icon icon="ph:moon" width="14"></iconify-icon>
+                    </span>
+                </a>
+                <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer"
+                    class="text-sm font-medium px-4 py-2 rounded-lg bg-white text-black hover:bg-zinc-200 transition-colors">
+                    Book Strategy Call
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="relative">
+        <!-- Hero -->
+        <section class="min-h-screen flex flex-col justify-center pt-24 pb-20 px-6">
+            <div class="max-w-4xl mx-auto text-center space-y-8">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 text-xs text-zinc-400 animate-fade-in" style="animation-delay: 0.1s">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#4e40ca] animate-pulse"></span>
+                    AI Automation · Voice Agents · Custom Software
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.05] animate-fade-in" style="animation-delay: 0.2s">
+                    <span class="text-gradient">Your Business,</span><br>
+                    <span class="text-white">Powered by Intelligent Systems.</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed animate-fade-in" style="animation-delay: 0.3s">
+                    We design, build, and manage the intelligent systems—AI automation, voice agents, and custom software—that power your business.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4 animate-fade-in" style="animation-delay: 0.4s">
+                    <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[#4e40ca] text-white font-medium hover:bg-[#6355d8] transition-colors shadow-lg shadow-[#4e40ca]/25">
+                        Book Strategy Call
+                        <iconify-icon icon="ph:arrow-right" class="text-lg"></iconify-icon>
+                    </a>
+                    <a href="#services" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg border border-white/10 text-white font-medium hover:border-white/20 hover:bg-white/5 transition-colors">
+                        View Our Work
+                    </a>
+                </div>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="max-w-4xl mx-auto mt-24 pt-16 border-t border-white/5">
+                <p class="text-xs uppercase tracking-widest text-zinc-500 mb-6 text-center">Trusted by forward-thinking companies</p>
+                <div class="flex flex-wrap justify-center gap-x-12 gap-y-4 text-zinc-600 text-sm">
+                    <span>SaaSforce</span>
+                    <span>TechFlow</span>
+                    <span>DataScale</span>
+                    <span>VentureCorp</span>
+                    <span>CloudNine</span>
+                    <span>BoltSoft</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="py-16 px-6 border-y border-white/5">
+            <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-2xl md:text-3xl font-semibold text-white">40-60%</div>
+                    <div class="text-sm text-zinc-500 mt-1">Time Savings</div>
+                </div>
+                <div>
+                    <div class="text-2xl md:text-3xl font-semibold text-white">24/7</div>
+                    <div class="text-sm text-zinc-500 mt-1">Always Available</div>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <div class="text-2xl md:text-3xl font-semibold text-white">100%</div>
+                    <div class="text-sm text-zinc-500 mt-1">Scalable Growth</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / Services -->
+        <section id="services" class="py-24 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-center mb-4">
+                    We Build Smart Technology
+                </h2>
+                <p class="text-zinc-400 text-center max-w-xl mx-auto mb-16">
+                    That solves real problems for growing businesses.
+                </p>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <a href="#" class="card-border rounded-xl p-8 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-lg bg-[#4e40ca]/20 flex items-center justify-center text-[#4e40ca] mb-6 group-hover:bg-[#4e40ca]/30 transition-colors">
+                            <iconify-icon icon="ph:robot" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">AI Process Automation</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Intelligent systems that handle repetitive workflows, freeing your team for strategic work.
+                        </p>
+                    </a>
+                    <a href="#" class="card-border rounded-xl p-8 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-lg bg-[#4e40ca]/20 flex items-center justify-center text-[#4e40ca] mb-6 group-hover:bg-[#4e40ca]/30 transition-colors">
+                            <iconify-icon icon="ph:phone-call" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Intelligent Voice Agents</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            24/7 conversational AI that handles customer inquiries, qualifies leads, and schedules appointments.
+                        </p>
+                    </a>
+                    <a href="#" class="card-border rounded-xl p-8 transition-all duration-300 group">
+                        <div class="w-12 h-12 rounded-lg bg-[#4e40ca]/20 flex items-center justify-center text-[#4e40ca] mb-6 group-hover:bg-[#4e40ca]/30 transition-colors">
+                            <iconify-icon icon="ph:desktop-tower" width="24"></iconify-icon>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-3">Custom Software</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            Tailored solutions built specifically for your unique workflows and tech stack.
+                        </p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="rounded-2xl border border-[#4e40ca]/30 bg-[#4e40ca]/10 p-12 md:p-16 text-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-b from-[#4e40ca]/10 to-transparent pointer-events-none"></div>
+                    <div class="relative z-10">
+                        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
+                            Start With a Free Operational Audit
+                        </h2>
+                        <p class="text-zinc-400 mb-8 max-w-md mx-auto">
+                            Identify your biggest bottlenecks and inefficiencies—no obligation, just insights.
+                        </p>
+                        <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer"
+                            class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-[#4e40ca] text-white font-medium hover:bg-[#6355d8] transition-colors">
+                            Book a Strategy Call
+                            <iconify-icon icon="ph:arrow-right"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 px-6 border-t border-white/5">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="text-lg font-semibold">Applied<span class="text-[#4e40ca]">AI</span></span>
+                </div>
+                <div class="flex gap-8 text-sm text-zinc-400">
+                    <a href="#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="#cases" class="hover:text-white transition-colors">Case Studies</a>
+                    <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
+                </div>
+            </div>
+            <p class="max-w-6xl mx-auto mt-8 text-center text-xs text-zinc-600">
+                © 2026 Applied AI. All rights reserved. Vancouver, Canada.
+            </p>
+        </footer>
+    </main>
+    <script>
+        // Redirect to light theme if user previously chose it
+        if (localStorage.getItem('theme') === 'light') {
+            window.location.replace('index.html');
+        }
+    </script>
+</body>
+</html>
