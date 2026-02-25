@@ -198,6 +198,16 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
         </div>
     </header>
 
+    <!-- Background (Applied / Unicorn Studio) - fixed full viewport for mobile compatibility (like v3) -->
+    <div class="applied-background-component fixed top-0 w-full h-screen -z-10 hidden dark:block bg-black" data-alpha-mask="80" style="mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent);">
+        <div class="applied-background-component top-0 w-full -z-10 absolute h-full">
+            <div data-us-project="ILgOO23w4wEyPQOKyLO4" class="absolute w-full h-full left-0 top-0 -z-10"></div>
+            <script type="text/javascript">
+                !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="js/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head||document.body).appendChild(i)}}();
+            </script>
+        </div>
+    </div>
+
     <!-- Fundo com Grid (Apenas Hero) -->
     <div class="fixed grid-lines w-full h-[100vh] top-0 right-0 left-0 pointer-events-none z-0"></div>
 
@@ -207,17 +217,8 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
         <main class="flex-1 w-full">
 
             <!-- Section A: Hero -->
-            <section class="relative overflow-hidden lg:px-12 lg:pt-16 lg:pb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 min-h-[60vh] lg:min-h-[75vh] max-w-[1600px] mr-auto ml-auto pt-8 pr-6 pb-12 pl-6 items-center">
-                <!-- Background (Applied / Unicorn Studio) - hero only, dark mode. bg-black prevents white flash while loading -->
-                <div class="applied-background-component absolute inset-0 -z-10 hidden dark:block bg-black" data-alpha-mask="80" style="mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, transparent, black 0%, black 80%, transparent);">
-                    <div class="applied-background-component absolute inset-0 -z-10">
-                        <div data-us-project="ILgOO23w4wEyPQOKyLO4" class="absolute w-full h-full left-0 top-0 -z-10" data-us-scale="0.75" data-us-dpi="1" data-us-fps="30"></div>
-                        <script type="text/javascript">
-                            !function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="js/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head||document.body).appendChild(i)}}();
-                        </script>
-                    </div>
-                </div>
-                <div class="animate-clip-in lg:col-span-7 space-y-6 relative z-10" style="animation-delay: 0.1s">
+            <section class="lg:px-12 lg:pt-16 lg:pb-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 min-h-[60vh] lg:min-h-[75vh] max-w-[1600px] mr-auto ml-auto pt-8 pr-6 pb-12 pl-6 items-center">
+                <div class="animate-clip-in lg:col-span-7 space-y-6" style="animation-delay: 0.1s">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-medium bg-white border-stone-200 text-stone-600">
                         <span class="w-2 h-2 rounded-full bg-[#4e40ca] animate-pulse"></span>
                         Digital Infrastructure &amp; Growth
@@ -266,7 +267,7 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
                 </div>
 
                 <!-- Hero Visual -->
-                <div class="lg:col-span-5 flex flex-col animate-fade-up lg:mt-0 h-full mt-8 relative z-10 justify-center" style="animation-delay: 0.3s">
+                <div class="lg:col-span-5 flex flex-col animate-fade-up lg:mt-0 h-full mt-8 relative justify-center" style="animation-delay: 0.3s">
                     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#4e40ca] opacity-20 blur-[100px] rounded-full pointer-events-none"></div>
                     <div class="relative space-y-4">
                         <!-- Card 1: Cloud Status -->
