@@ -119,6 +119,22 @@ display: none;
 scrollbar-width: none;
 }
 
+/* Portfolio card reveal animation */
+@keyframes portfolioCardReveal {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.portfolio-card-animated {
+    opacity: 0;
+    animation: portfolioCardReveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+.portfolio-card-animated:nth-child(1) { animation-delay: 0.1s; }
+.portfolio-card-animated:nth-child(2) { animation-delay: 0.2s; }
+.portfolio-card-animated:nth-child(3) { animation-delay: 0.3s; }
+.portfolio-card-animated:nth-child(4) { animation-delay: 0.4s; }
+.portfolio-card-animated:nth-child(5) { animation-delay: 0.5s; }
+.portfolio-card-animated:nth-child(6) { animation-delay: 0.6s; }
+
 /* Dark mode overrides */
 html.dark { color-scheme: dark; }
 html.dark body { background: #000 !important; color: #e5e5e5 !important; }
@@ -168,7 +184,7 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/70 dark:bg-black/70 backdrop-blur-xl border-b border-stone-200/50 dark:border-stone-800/50 transition-all duration-300">
         <div class="max-w-[1600px] mx-auto px-6 lg:px-12 h-16 lg:h-20 flex items-center justify-between">
             <!-- Logo -->
-            <a href="https://appliedinc.ca/" class="block group text-2xl lg:text-3xl font-semibold tracking-tighter font-google-sans-flex">
+            <a href="https://appliedinc.ca/" class="block group text-2xl lg:text-3xl font-semibold tracking-tighter font-montserrat">
                 Applied<span class="transition-colors text-[#4e40ca]">AI</span>
             </a>
 
@@ -225,9 +241,9 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
                         Digital Infrastructure &amp; Growth
                     </div>
                     <!-- Headline -->
-                    <h1 class="leading-[0.95] lg:text-7xl xl:text-8xl text-5xl font-medium text-stone-900 tracking-tighter">
+                    <h1 class="leading-[0.95] lg:text-7xl xl:text-8xl text-5xl font-medium text-stone-900 tracking-tighter font-montserrat">
                         Your Business, 
-                        <span class="text-slate-950 font-google-sans-flex relative inline-block">Powered by
+                        <span class="text-slate-950 font-montserrat relative inline-block">Powered by
                         <svg class="absolute w-full h-3 -bottom-1 left-0 text-[#4e40ca] -z-10" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" opacity="0.4"></path></svg>
                         </span> Intelligent Systems.
                     </h1>
@@ -454,7 +470,7 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
 </div>
                             <div class="p-6">
                                 <span class="inline-block px-2.5 py-1 rounded border border-[#4e40ca]/20 bg-[#4e40ca]/5 text-[#4e40ca] text-xs font-medium tracking-wide mb-4">PROBLEM 1</span>
-                                <h3 class="text-lg font-medium text-stone-900 dark:text-white mb-2 tracking-tight">Drowning in Repetition</h3>
+                                <h3 class="text-lg font-medium text-stone-900 dark:text-white mb-2 tracking-tight font-montserrat">Drowning in Repetition</h3>
                                 <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed font-light">Your team spends hours each day on repetitive administrative tasks that could be automated—draining productivity and morale.</p>
                             </div>
                         </div>
@@ -536,7 +552,7 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
 </div>
                             <div class="p-6">
                                 <span class="inline-block px-2.5 py-1 rounded border border-[#4e40ca]/20 bg-[#4e40ca]/5 text-[#4e40ca] text-xs font-medium tracking-wide mb-4">PROBLEM 2</span>
-                                <h3 class="text-lg font-medium text-stone-900 dark:text-white mb-2 tracking-tight">Lost Opportunities</h3>
+                                <h3 class="text-lg font-medium text-stone-900 dark:text-white mb-2 tracking-tight font-montserrat">Lost Opportunities</h3>
                                 <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed font-light">Promising leads are slipping through the cracks because manual follow-up systems can't keep pace with your pipeline.</p>
                             </div>
                         </div>
@@ -560,7 +576,7 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
 </div>
                             <div class="p-6">
                                 <span class="inline-block px-2.5 py-1 rounded border border-[#4e40ca]/20 bg-[#4e40ca]/5 text-[#4e40ca] text-xs font-medium tracking-wide mb-4">PROBLEM 3</span>
-                                <h3 class="text-lg font-medium text-stone-900 dark:text-white mb-2 tracking-tight">The Hiring Trap</h3>
+                                <h3 class="text-lg font-medium text-stone-900 dark:text-white mb-2 tracking-tight font-montserrat">The Hiring Trap</h3>
                                 <p class="text-stone-500 dark:text-stone-400 text-sm leading-relaxed font-light">You can't scale operations without continuously hiring more people, increasing overhead and complexity.</p>
                             </div>
                         </div>
@@ -828,7 +844,7 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
                                 <div class="mx-auto w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center text-stone-900 mb-2">
                                     <iconify-icon icon="heroicons:clock" width="24"></iconify-icon>
                                 </div>
-                                <h3 class="text-lg font-bold text-stone-900">40-60%
+                                <h3 class="text-lg font-bold text-stone-900 font-montserrat">40-60%
  Time Savings
 </h3>
                                 <p class="text-stone-600 text-sm leading-relaxed">Reduction in hours spent on manual, repetitive administrative tasks across departments
@@ -838,7 +854,7 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
                                 <div class="mx-auto w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center text-stone-900 mb-2">
                                     <iconify-icon icon="heroicons:signal" width="24"></iconify-icon>
                                 </div>
-                                <h3 class="text-lg font-bold text-stone-900">24/7
+                                <h3 class="text-lg font-bold text-stone-900 font-montserrat">24/7
   Always Available
 </h3>
                                 <p class="text-stone-600 text-sm leading-relaxed">Continuous customer engagement and lead qualification without human oversight
@@ -848,7 +864,7 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
                                 <div class="mx-auto w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center text-stone-900 mb-2">
                                     <iconify-icon icon="heroicons:arrow-trending-up" width="24"></iconify-icon>
                                 </div>
-                                <h3 class="text-lg font-bold text-stone-900">100%
+                                <h3 class="text-lg font-bold text-stone-900 font-montserrat">100%
  Scalable Growth
 </h3>
                                 <p class="text-stone-600 text-sm leading-relaxed">Operations expand seamlessly without proportional increases in staffing costs
@@ -858,81 +874,126 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
                     </div>
                 </section>
 
-                <!-- Section E: Results that Compound (Case Study Visual) -->
-                <section id="cases" class="max-w-[1600px] mx-auto px-6 lg:px-12 mt-16 lg:mt-20 mb-12 lg:mb-20">
-                    <div class="overflow-hidden min-h-[500px] lg:h-[600px] rounded-[32px] relative shadow-2xl border shadow-zinc-900/30 bg-stone-900 border-stone-800">
-                        <div class="opacity-20 absolute top-0 right-0 bottom-0 left-0" style="background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 30px 30px"></div>
-                        <div class="flex flex-col lg:flex-row h-full">
-                            <div class="flex-1 lg:p-16 flex flex-col z-10 pt-8 pr-8 pb-8 pl-8 relative justify-center">
-                            <div class="flex items-center gap-2 mb-6">
-                                <div class="w-2 h-2 bg-[#4e40ca] rounded-full animate-pulse"></div>
-                                <span class="text-[#4e40ca] font-mono text-xs uppercase tracking-wider">Why choose us?</span>
-                            </div>
-                            <h2 class="lg:text-5xl xl:text-6xl leading-tight lg:mr-6 lg:mb-8 text-3xl font-medium text-white tracking-tight font-montserrat mb-6">
-                                Your Trusted Technology Partner
+                <!-- Section E: Case Studies (Featured Work) -->
+                <section id="cases" class="max-w-[1600px] mx-auto px-6 lg:px-12 mb-20 lg:mb-24 w-full relative z-10">
+                    <div class="mb-12 flex flex-col items-center justify-center text-center">
+                        <div class="max-w-2xl mx-auto">
+                            <h2 class="text-3xl lg:text-5xl font-normal text-neutral-900 dark:text-white tracking-tight font-montserrat mb-4">Case Studies</h2>
+                            <p class="text-neutral-500 dark:text-neutral-400 text-sm lg:text-base font-light leading-relaxed">A curated selection of high-performing digital experiences, automated workflows, and intelligent voice systems we've deployed.</p>
+                        </div>
+                    </div>
 
-                            </h2>
-                            <p class="text-base lg:text-lg text-stone-400 font-montserrat max-w-md mb-8 lg:mb-10 leading-relaxed">
-                                See how we deliver measurable impact for our partners.
-                            </p>
-
-                            <button class="group flex items-center gap-3 bg-[#4e40ca] hover:bg-[#3a2fb0] transition-all text-sm font-semibold rounded-full px-8 py-4 w-fit shadow-lg hover:shadow-[0_0_20px_rgba(78,64,202,0.3)] text-white">
-                                <span>Read Case Studies</span>
-                                <iconify-icon icon="heroicons:arrow-right" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
-                            </button>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                        <!-- Card 1 -->
+                        <div class="portfolio-card-animated group relative flex flex-col rounded-[24px] overflow-hidden bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-500 shadow-sm hover:shadow-md dark:shadow-none hover:-translate-y-1">
+                            <div class="aspect-[2876/1492] w-full relative overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+                                <div class="absolute inset-0 bg-neutral-900/10 dark:bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                                <img src="img/1.png" alt="PowerClean BC Booking Voice Agent" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                                <div class="absolute top-4 right-4 z-20 bg-white/90 dark:bg-black/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 flex items-center gap-1.5 shadow-sm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#4e40ca] animate-pulse"></span>
+                                    <span class="text-[10px] font-medium tracking-wide uppercase text-neutral-900 dark:text-white">Active</span>
+                                </div>
                             </div>
-                            <div class="flex lg:w-[50%] lg:pt-24 lg:pr-16 lg:pl-0 lg:items-center lg:pb-34 pt-8 pr-4 pb-16 pl-4 relative items-center">
-                                <div class="transform [--fx-filter:blur(10px)_liquid-glass(0,10)_saturate(1.25)_noise(0.5,1,0)] lg:rounded-xl text-xs text-stone-400 font-mono bg-slate-950/80 w-full border-stone-800 border rounded-xl pt-4 pr-6 pb-6 pl-6 shadow-2xl backdrop-blur-md">
-                                    <!-- iOS-style Window Controls -->
-                                    <div class="flex items-center gap-2 mb-4 pb-3 border-b border-stone-800">
-                                        <div class="flex gap-1.5">
-                                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                                        </div>
-                                        <div class="flex-1 text-center">
-                                            <div class="text-sm md:text-base font-semibold text-stone-200">Real Results from Real Businesses</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Grid of Results Cards -->
-                                    <div class="grid grid-cols-2 gap-3">
-                                        <!-- Card 1: Law Firm -->
-                                        <div class="p-3 rounded border bg-stone-900 border-stone-800">
-                                            <div class="text-lg md:text-xl font-bold text-blue-400 mb-1">-40 hours</div>
-                                            <div class="text-xs md:text-sm text-blue-300 mb-2">saved/week</div>
-                                            <div class="pt-2 border-t border-stone-800 mt-2">
-                                                <div class="text-xs text-blue-200">Law Firm</div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- Card 2: Retail Co. -->
-                                        <div class="p-3 rounded border bg-stone-900 border-stone-800">
-                                            <div class="text-lg md:text-xl font-bold text-emerald-400 mb-1">+$50K</div>
-                                            <div class="text-xs md:text-sm text-emerald-300 mb-2">saved/year</div>
-                                            <div class="pt-2 border-t border-stone-800 mt-2">
-                                                <div class="text-xs text-emerald-200">Retail Co.</div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- Card 3: Clinic -->
-                                        <div class="p-3 rounded border bg-stone-900 border-stone-800">
-                                            <div class="text-lg md:text-xl font-bold text-purple-400 mb-1">80% calls</div>
-                                            <div class="text-xs md:text-sm text-purple-300 mb-2">automated</div>
-                                            <div class="pt-2 border-t border-stone-800 mt-2">
-                                                <div class="text-xs text-purple-200">Clinic</div>
-                                            </div>
-                                        </div>
-                                        
-                                        <!-- Card 4: Service Co. -->
-                                        <div class="p-3 rounded border bg-stone-900 border-stone-800">
-                                            <div class="text-lg md:text-xl font-bold text-amber-400 mb-1">3-month</div>
-                                            <div class="text-xs md:text-sm text-amber-300 mb-2">ROI</div>
-                                            <div class="pt-2 border-t border-stone-800 mt-2">
-                                                <div class="text-xs text-amber-200">Service Co.</div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="p-6 lg:p-8 flex-1 flex flex-col justify-between relative z-20 bg-white dark:bg-[#0a0a0a]">
+                                <div>
+                                    <span class="inline-block px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 text-[11px] font-medium tracking-wide uppercase mb-4 border border-neutral-200 dark:border-neutral-800">Voice Agent</span>
+                                    <h3 class="text-xl lg:text-2xl font-normal text-neutral-900 dark:text-white tracking-tight mb-3 font-montserrat transition-colors group-hover:text-[#4e40ca] dark:group-hover:text-[#6366f1]">PowerClean BC Booking</h3>
+                                    <p class="text-neutral-500 dark:text-neutral-400 text-sm font-light leading-relaxed">Autonomous voice agent that never misses a booking opportunity. Handles customer inquiries 24/7, qualifies leads by gathering property details, provides accurate service quotes instantly, and schedules cleanings directly into their calendar—converting more calls into confirmed appointments.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="portfolio-card-animated group relative flex flex-col rounded-[24px] overflow-hidden bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-500 shadow-sm hover:shadow-md dark:shadow-none hover:-translate-y-1">
+                            <div class="aspect-[2876/1492] w-full relative overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+                                <div class="absolute inset-0 bg-neutral-900/10 dark:bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                                <img src="img/5.png" alt="FluxHouse Agency" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                                <div class="absolute top-4 right-4 z-20 bg-white/90 dark:bg-black/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 flex items-center gap-1.5 shadow-sm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#4e40ca] animate-pulse"></span>
+                                    <span class="text-[10px] font-medium tracking-wide uppercase text-neutral-900 dark:text-white">Active</span>
+                                </div>
+                            </div>
+                            <div class="p-6 lg:p-8 flex-1 flex flex-col justify-between relative z-20 bg-white dark:bg-[#0a0a0a]">
+                                <div>
+                                    <span class="inline-block px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 text-[11px] font-medium tracking-wide uppercase mb-4 border border-neutral-200 dark:border-neutral-800">Website</span>
+                                    <h3 class="text-xl lg:text-2xl font-normal text-neutral-900 dark:text-white tracking-tight mb-3 font-montserrat transition-colors group-hover:text-[#4e40ca] dark:group-hover:text-[#6366f1]">FluxHouse Agency</h3>
+                                    <p class="text-neutral-500 dark:text-neutral-400 text-sm font-light leading-relaxed">Full website design with hero section emphasizing their "pay when you see it working" unique value proposition, step-by-step process visualization, social proof integration with detailed client testimonials, portfolio case studies with metrics, dual pricing model presentation (ownership vs partnership), and strategic CTAs designed to convert visitors into booked consultations.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="portfolio-card-animated group relative flex flex-col rounded-[24px] overflow-hidden bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-500 shadow-sm hover:shadow-md dark:shadow-none hover:-translate-y-1">
+                            <div class="aspect-[2876/1492] w-full relative overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+                                <div class="absolute inset-0 bg-neutral-900/10 dark:bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                                <img src="img/3.png" alt="PopWise Popup Platform" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                                <div class="absolute top-4 right-4 z-20 bg-white/90 dark:bg-black/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 flex items-center gap-1.5 shadow-sm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#4e40ca] animate-pulse"></span>
+                                    <span class="text-[10px] font-medium tracking-wide uppercase text-neutral-900 dark:text-white">Active</span>
+                                </div>
+                            </div>
+                            <div class="p-6 lg:p-8 flex-1 flex flex-col justify-between relative z-20 bg-white dark:bg-[#0a0a0a]">
+                                <div>
+                                    <span class="inline-block px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 text-[11px] font-medium tracking-wide uppercase mb-4 border border-neutral-200 dark:border-neutral-800">Custom software</span>
+                                    <h3 class="text-xl lg:text-2xl font-normal text-neutral-900 dark:text-white tracking-tight mb-3 font-montserrat transition-colors group-hover:text-[#4e40ca] dark:group-hover:text-[#6366f1]">PopWise Popup Platform</h3>
+                                    <p class="text-neutral-500 dark:text-neutral-400 text-sm font-light leading-relaxed">Complete popup software built to solve the "97% of visitors aren't ready to buy" problem—enabling businesses to create urgency-driven, pain-point-focused popups that convert browsing visitors into customers through strategic psychological triggers and dead-simple implementation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="portfolio-card-animated group relative flex flex-col rounded-[24px] overflow-hidden bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-500 shadow-sm hover:shadow-md dark:shadow-none hover:-translate-y-1">
+                            <div class="aspect-[2876/1492] w-full relative overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+                                <div class="absolute inset-0 bg-neutral-900/10 dark:bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                                <img src="img/4.png" alt="BotCloud AI Chatbot Platform" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                                <div class="absolute top-4 right-4 z-20 bg-white/90 dark:bg-black/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 flex items-center gap-1.5 shadow-sm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#4e40ca] animate-pulse"></span>
+                                    <span class="text-[10px] font-medium tracking-wide uppercase text-neutral-900 dark:text-white">Active</span>
+                                </div>
+                            </div>
+                            <div class="p-6 lg:p-8 flex-1 flex flex-col justify-between relative z-20 bg-white dark:bg-[#0a0a0a]">
+                                <div>
+                                    <span class="inline-block px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 text-[11px] font-medium tracking-wide uppercase mb-4 border border-neutral-200 dark:border-neutral-800">Full Solution</span>
+                                    <h3 class="text-xl lg:text-2xl font-normal text-neutral-900 dark:text-white tracking-tight mb-3 font-montserrat transition-colors group-hover:text-[#4e40ca] dark:group-hover:text-[#6366f1]">BotCloud AI Chatbot Platform</h3>
+                                    <p class="text-neutral-500 dark:text-neutral-400 text-sm font-light leading-relaxed">Full-stack chatbot solution featuring AI-powered conversation engine, custom prompt control for tone and behavior, one-line website embedding, knowledge base integration (docs, URLs, help centers), lead capture, conversation analytics, and seamless human handoff—turning support documentation into 24/7 customer assistance.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="portfolio-card-animated group relative flex flex-col rounded-[24px] overflow-hidden bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-500 shadow-sm hover:shadow-md dark:shadow-none hover:-translate-y-1">
+                            <div class="aspect-[2876/1492] w-full relative overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+                                <div class="absolute inset-0 bg-neutral-900/10 dark:bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                                <img src="img/2.png" alt="Geniously Learning Platform" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                                <div class="absolute top-4 right-4 z-20 bg-white/90 dark:bg-black/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 flex items-center gap-1.5 shadow-sm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#4e40ca] animate-pulse"></span>
+                                    <span class="text-[10px] font-medium tracking-wide uppercase text-neutral-900 dark:text-white">Active</span>
+                                </div>
+                            </div>
+                            <div class="p-6 lg:p-8 flex-1 flex flex-col justify-between relative z-20 bg-white dark:bg-[#0a0a0a]">
+                                <div>
+                                    <span class="inline-block px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 text-[11px] font-medium tracking-wide uppercase mb-4 border border-neutral-200 dark:border-neutral-800">Custom Software</span>
+                                    <h3 class="text-xl lg:text-2xl font-normal text-neutral-900 dark:text-white tracking-tight mb-3 font-montserrat transition-colors group-hover:text-[#4e40ca] dark:group-hover:text-[#6366f1]">Geniously Learning Platform</h3>
+                                    <p class="text-neutral-500 dark:text-neutral-400 text-sm font-light leading-relaxed">Full-stack EdTech platform built from scratch: teachers create custom learning activities with AI assistance, students interact with an intelligent tutor that adapts to their pace, and the system automatically generates detailed feedback and analytics—transforming one-to-one tutoring into scalable personalized education.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="portfolio-card-animated group relative flex flex-col rounded-[24px] overflow-hidden bg-white dark:bg-[#0a0a0a] border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-500 shadow-sm hover:shadow-md dark:shadow-none hover:-translate-y-1">
+                            <div class="aspect-[2876/1492] w-full relative overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+                                <div class="absolute inset-0 bg-neutral-900/10 dark:bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                                <img src="img/n8n.webp" alt="Digital Newspaper Content Engine" class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                                <div class="absolute top-4 right-4 z-20 bg-white/90 dark:bg-black/90 backdrop-blur-md px-3 py-1.5 rounded-full border border-neutral-200/50 dark:border-neutral-800/50 flex items-center gap-1.5 shadow-sm">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-[#4e40ca] animate-pulse"></span>
+                                    <span class="text-[10px] font-medium tracking-wide uppercase text-neutral-900 dark:text-white">Active</span>
+                                </div>
+                            </div>
+                            <div class="p-6 lg:p-8 flex-1 flex flex-col justify-between relative z-20 bg-white dark:bg-[#0a0a0a]">
+                                <div>
+                                    <span class="inline-block px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-400 text-[11px] font-medium tracking-wide uppercase mb-4 border border-neutral-200 dark:border-neutral-800">Automation</span>
+                                    <h3 class="text-xl lg:text-2xl font-normal text-neutral-900 dark:text-white tracking-tight mb-3 font-montserrat transition-colors group-hover:text-[#4e40ca] dark:group-hover:text-[#6366f1]">Digital Newspaper Content Engine</h3>
+                                    <p class="text-neutral-500 dark:text-neutral-400 text-sm font-light leading-relaxed">End-to-end automated content pipeline that monitors news sources, identifies trending topics, generates story angles tailored to audience interests, and produces AI-written article drafts on schedule—delivering a full content calendar daily without human intervention, reducing editorial workload by 60% while maintaining publishing velocity.</p>
                                 </div>
                             </div>
                         </div>
@@ -960,7 +1021,7 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
                         <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 justify-between">
                             <div class="lg:w-1/3 space-y-5">
                             <div class="flex gap-2 items-center">
-                                <span class="text-2xl lg:text-3xl font-semibold tracking-tighter font-google-sans-flex">Applied<span class="transition-colors text-[#4e40ca]">AI</span> Solutions Inc.</span>
+                                <span class="text-2xl lg:text-3xl font-semibold tracking-tighter font-montserrat">Applied<span class="transition-colors text-[#4e40ca]">AI</span> Solutions Inc.</span>
                             </div>
                             <p class="text-sm text-stone-500 font-montserrat max-w-sm leading-relaxed">
                                 Smart automation for growing businesses
@@ -971,7 +1032,7 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
                             </div>
                             <div class="flex flex-wrap gap-10 lg:gap-20 text-sm">
                                 <div class="space-y-4">
-                                    <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-400">Company</h3>
+                                    <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-400 font-montserrat">Company</h3>
                                     <ul class="space-y-3 text-stone-600">
                                         <li><a href="#services" class="hover:text-stone-900 transition-colors">Services</a></li>
                                         <li><a href="#cases" class="hover:text-stone-900 transition-colors">Case Studies</a></li>
@@ -980,13 +1041,13 @@ html.dark .hover\:grayscale-0:hover { opacity: 1; }
                                     </ul>
                                 </div>
                                 <div class="space-y-4">
-                                    <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-400">Connect</h3>
+                                    <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-400 font-montserrat">Connect</h3>
                                     <ul class="space-y-3 text-stone-600">
                                         <li><a href="https://www.linkedin.com/company/applied-ai-solutions-inc/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-stone-900 transition-colors"><iconify-icon icon="simple-icons:linkedin" width="14"></iconify-icon> LinkedIn</a></li>
                                     </ul>
                                 </div>
                                 <div class="space-y-4">
-                                    <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-400">Legal</h3>
+                                    <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-400 font-montserrat">Legal</h3>
                                     <ul class="space-y-3 text-stone-600">
                                         <li><a href="privacy.html" class="hover:text-stone-900 transition-colors">Privacy Policy</a></li>
                                         <li><a href="terms.html" class="hover:text-stone-900 transition-colors">Terms</a></li>
