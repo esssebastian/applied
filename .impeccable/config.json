@@ -1,0 +1,38 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "geist",
+        "createdAt": "2026-09-09T01:09:39.461Z",
+        "reason": "User confirmed Geist is intentional (pre-existing brand type stack, Preserve-mode redesign)"
+      },
+      {
+        "rule": "overused-font",
+        "value": "montserrat",
+        "createdAt": "2026-09-09T01:10:13.185Z",
+        "reason": "User confirmed Montserrat is intentional (pre-existing brand type stack, Preserve-mode redesign)"
+      },
+      {
+        "rule": "codex-grid-background",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-09T01:10:15.355Z",
+        "reason": "Pre-existing decorative hero grid background, out of scope for this Preserve-mode pass"
+      },
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-09T01:10:17.065Z",
+        "reason": "Hero CTA shadow intentionally tinted to brand purple per taste-skill guidance, not a generic AI glow"
+      }
+    ]
+  }
+}
