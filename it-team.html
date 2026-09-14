@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your AI Department, Built and Run For You | Applied AI Networks Inc.</title>
+<link rel="icon" type="image/png" href="https://appliedinc.ca/img/logoa.png">
+<meta name="description" content="Every company wants AI working inside their business. Almost none know how to set it up. Applied becomes your AI department — we build it, connect it to your systems, and keep it running. One flat monthly fee, Canadian company, Canadian data.">
+<!-- Draft for internal review. Remove this line to let search engines index the page. -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Your AI department starts Monday | Applied AI Networks Inc.">
+<meta property="og:description" content="Every company wants AI working in their business. Almost none know how to set it up. We become the department that does — built, connected and maintained, for one flat monthly fee.">
+<meta property="og:image" content="https://appliedinc.ca/img/logoa.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://appliedinc.ca/it-team.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Your AI department starts Monday | Applied AI Networks Inc.">
+<meta name="twitter:description" content="Every company wants AI working in their business. Almost none know how to set it up. We're the department that does.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Geist', 'sans-serif'] },
+      colors: {
+        brand: { primary: '#4e40ca', light: '#6355d8', dark: '#3a2fb0' },
+        stone: {
+          50: '#fafafa', 100: '#f5f5f5', 200: '#e5e5e5', 300: '#d4d4d4', 400: '#a3a3a3',
+          500: '#737373', 600: '#525252', 700: '#404040', 800: '#262626', 900: '#171717', 950: '#0a0a0a'
+        }
+      },
+      animation: {
+        'marquee': 'marquee 40s linear infinite',
+        'clip-in': 'clipIn 1.2s cubic-bezier(0.25, 1, 0.5, 1) both',
+        'fade-up': 'fadeUp 0.8s ease-out forwards',
+      },
+      keyframes: {
+        marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } },
+        clipIn: { '0%': { opacity: '0', clipPath: 'inset(0 0 100% 0)' }, '100%': { opacity: '1', clipPath: 'inset(0 0 0 0)' } },
+        fadeUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+      }
+    }
+  }
+}
+</script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap">
+
+<style>
+  .font-geist  { font-family: 'Geist', sans-serif; }
+  .font-display{ font-family: 'Clash Display', 'Geist', sans-serif; }
+
+  /* Hero grid backdrop — same grammar as index.html */
+  .grid-lines {
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
+  }
+
+  /* Cursor-follow spotlight on cards */
+  .spotlight-card { position: relative; overflow: hidden; }
+  .spotlight-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(78,64,202,0.10), transparent 40%);
+    opacity: 0; transition: opacity .5s; pointer-events: none; z-index: 1;
+  }
+  .spotlight-card:hover::before { opacity: 1; }
+  .spotlight-card > * { position: relative; z-index: 2; }
+
+  /* Scroll reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(.25,1,.5,1), transform .7s cubic-bezier(.25,1,.5,1); }
+  .reveal.is-visible { opacity: 1; transform: none; }
+
+  /* Accordion */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(45deg); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .animate-clip-in, .animate-fade-up, .animate-marquee { animation: none !important; opacity: 1 !important; }
+  }
+</style>
+</head>
+
+<body class="min-h-screen overflow-x-hidden selection:bg-[#4e40ca] selection:text-white text-stone-900 font-geist bg-stone-100 antialiased">
+
+<!-- ============================================================= HEADER -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-xl border-b border-stone-200/60">
+  <div class="max-w-[1600px] mx-auto px-6 lg:px-12 h-16 lg:h-20 flex items-center justify-between">
+    <a href="index.html" class="block text-2xl lg:text-3xl font-semibold tracking-tighter font-display">
+      Applied<span class="text-[#4e40ca]">AI</span>
+    </a>
+
+    <nav class="hidden lg:flex font-display gap-x-10 items-center">
+      <a href="#department" class="text-sm font-medium text-stone-600 hover:text-[#4e40ca] transition-colors">What's included</a>
+      <a href="#how" class="text-sm font-medium text-stone-600 hover:text-[#4e40ca] transition-colors">How it works</a>
+      <a href="#pricing" class="text-sm font-medium text-stone-600 hover:text-[#4e40ca] transition-colors">Pricing</a>
+      <a href="#faq" class="text-sm font-medium text-stone-600 hover:text-[#4e40ca] transition-colors">FAQ</a>
+    </nav>
+
+    <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer"
+       class="group inline-flex items-center gap-1.5 sm:gap-2 bg-[#4e40ca] hover:bg-[#3a2fb0] active:scale-95 text-white transition-all duration-200 font-medium px-4 py-2.5 lg:px-5 rounded-full text-xs lg:text-sm shadow-md shadow-[#4e40ca]/25 hover:shadow-lg hover:shadow-[#4e40ca]/35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4e40ca]">
+      Book a Free AI Assessment
+      <iconify-icon icon="heroicons:arrow-right" width="16" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+    </a>
+  </div>
+</header>
+
+<!-- Hero grid backdrop -->
+<div class="fixed grid-lines w-full h-screen top-0 left-0 right-0 pointer-events-none z-0"></div>
+
+<div class="relative z-10 pt-16 lg:pt-20">
+<main>
+
+  <!-- =========================================================== HERO -->
+  <section class="max-w-[1600px] mx-auto px-6 lg:px-12 pt-10 pb-16 lg:pt-20 lg:pb-24 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+    <div class="lg:col-span-7 space-y-7 animate-clip-in">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-stone-200 bg-white text-xs font-medium text-stone-600">
+        <span class="w-2 h-2 rounded-full bg-[#4e40ca] animate-pulse"></span>
+        Outsourced AI Departments · Canada
+      </div>
+
+      <h1 class="font-display font-medium tracking-tighter text-stone-900 text-5xl lg:text-7xl xl:text-[5.5rem] leading-[0.95]">
+        Your AI department<br>starts Monday.
+      </h1>
+
+      <p class="text-lg lg:text-xl text-stone-600 max-w-xl leading-relaxed">
+        Every company wants AI working inside their business. Almost none have anyone who can
+        actually set it up, connect it to the systems they already use, and keep it running
+        once the demo is over. That's the job we do. One flat monthly fee, no six-figure hire.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-3 pt-2">
+        <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer"
+           class="group inline-flex items-center justify-center gap-2 bg-[#4e40ca] hover:bg-[#3a2fb0] active:scale-95 text-white transition-all duration-200 font-medium px-7 py-4 rounded-full text-sm shadow-lg shadow-[#4e40ca]/25">
+          Book a Free AI Assessment
+          <iconify-icon icon="heroicons:arrow-right" width="16" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+        </a>
+        <a href="#pricing"
+           class="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 border border-stone-200 text-stone-900 transition-colors font-medium px-7 py-4 rounded-full text-sm">
+          See the three plans
+        </a>
+      </div>
+
+      <p class="text-sm text-stone-500 pt-1">
+        Canadian company, based in Vancouver. Your data stays in Canada and never trains anyone's
+        model. Cancel with 30 days' notice.
+      </p>
+    </div>
+
+    <!-- Hero side panel: what AI is actually doing for them, not IT tickets -->
+    <div class="lg:col-span-5 animate-fade-up" style="animation-delay:.25s">
+      <div class="bg-white border border-stone-200 rounded-3xl p-6 lg:p-7 shadow-sm">
+        <div class="flex items-center justify-between pb-5 border-b border-stone-100">
+          <span class="text-xs uppercase tracking-widest text-stone-400 font-display">Working in your business</span>
+          <span class="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-600">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> 4 systems live
+          </span>
+        </div>
+
+        <ul class="divide-y divide-stone-100">
+          <li class="py-4 flex items-start gap-4">
+            <div class="w-9 h-9 rounded-xl bg-[#4e40ca]/10 flex items-center justify-center shrink-0">
+              <iconify-icon icon="heroicons:phone-arrow-down-left" width="18" class="text-[#4e40ca]"></iconify-icon>
+            </div>
+            <div class="min-w-0">
+              <p class="text-sm font-medium text-stone-900">Every call answered, day or night</p>
+              <p class="text-sm text-stone-500">Quoted, booked and written into your calendar. Including 7pm on a Saturday.</p>
+            </div>
+          </li>
+          <li class="py-4 flex items-start gap-4">
+            <div class="w-9 h-9 rounded-xl bg-[#4e40ca]/10 flex items-center justify-center shrink-0">
+              <iconify-icon icon="heroicons:document-text" width="18" class="text-[#4e40ca]"></iconify-icon>
+            </div>
+            <div class="min-w-0">
+              <p class="text-sm font-medium text-stone-900">Quotes drafted from an email enquiry</p>
+              <p class="text-sm text-stone-500">Your pricing rules, your wording — ready for a person to approve in seconds, not an afternoon.</p>
+            </div>
+          </li>
+          <li class="py-4 flex items-start gap-4">
+            <div class="w-9 h-9 rounded-xl bg-[#4e40ca]/10 flex items-center justify-center shrink-0">
+              <iconify-icon icon="heroicons:arrows-right-left" width="18" class="text-[#4e40ca]"></iconify-icon>
+            </div>
+            <div class="min-w-0">
+              <p class="text-sm font-medium text-stone-900">Paperwork reconciled against jobs</p>
+              <p class="text-sm text-stone-500">Invoices, POs and timesheets matched automatically. Only the exceptions reach a human.</p>
+            </div>
+          </li>
+          <li class="py-4 flex items-start gap-4">
+            <div class="w-9 h-9 rounded-xl bg-[#4e40ca]/10 flex items-center justify-center shrink-0">
+              <iconify-icon icon="heroicons:chart-bar" width="18" class="text-[#4e40ca]"></iconify-icon>
+            </div>
+            <div class="min-w-0">
+              <p class="text-sm font-medium text-stone-900">Monday's numbers already written</p>
+              <p class="text-sm text-stone-500">Pulled from every system into one page, on your desk before you are.</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="pt-5 mt-1 border-t border-stone-100 flex items-center justify-between gap-4">
+          <span class="text-sm text-stone-500">Built, connected and maintained by us.<br>Your involvement:</span>
+          <span class="font-display font-medium text-stone-900 text-right shrink-0">One hour<br>a week</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================== TRUST STRIP -->
+  <section class="max-w-[1600px] mx-auto px-6 lg:px-12 pb-16 lg:pb-24">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-stone-200 border border-stone-200 rounded-3xl overflow-hidden reveal">
+      <div class="bg-white p-6 lg:p-8">
+        <p class="font-display text-3xl lg:text-4xl font-medium tracking-tight text-stone-900">30 days</p>
+        <p class="text-sm text-stone-500 mt-1.5">To your first system live and doing real work</p>
+      </div>
+      <div class="bg-white p-6 lg:p-8">
+        <p class="font-display text-3xl lg:text-4xl font-medium tracking-tight text-stone-900">24/7</p>
+        <p class="text-sm text-stone-500 mt-1.5">It works nights, weekends and through your busy season</p>
+      </div>
+      <div class="bg-white p-6 lg:p-8">
+        <p class="font-display text-3xl lg:text-4xl font-medium tracking-tight text-stone-900">Zero</p>
+        <p class="text-sm text-stone-500 mt-1.5">New headcount, benefits or recruiting fees</p>
+      </div>
+      <div class="bg-white p-6 lg:p-8">
+        <p class="font-display text-3xl lg:text-4xl font-medium tracking-tight text-stone-900">30 days</p>
+        <p class="text-sm text-stone-500 mt-1.5">Notice to cancel. You keep everything we built</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================== PROBLEM -->
+  <section class="bg-white border-y border-stone-200">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 lg:py-28">
+
+      <div class="max-w-3xl reveal">
+        <span class="text-xs uppercase tracking-widest text-stone-400 font-display">The situation</span>
+        <h2 class="font-display font-medium tracking-tighter text-stone-900 text-4xl lg:text-6xl leading-[1.02] mt-4">
+          You've heard what AI can do.<br class="hidden lg:block"> Nobody told you who does it.
+        </h2>
+        <p class="text-lg text-stone-600 mt-6 leading-relaxed">
+          The technology stopped being the hard part a while ago. The hard part is that inside a
+          company your size, adopting it is nobody's actual job — so it lands on whoever has a
+          free afternoon, and a free afternoon never arrives.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-14 lg:mt-20">
+
+        <article class="spotlight-card bg-stone-50 border border-stone-200 rounded-3xl p-8 reveal">
+          <span class="text-xs uppercase tracking-widest text-[#4e40ca] font-display font-semibold">Problem 01</span>
+          <h3 class="font-display text-2xl font-medium tracking-tight text-stone-900 mt-5">Everyone has an opinion. Nobody owns it.</h3>
+          <p class="text-stone-600 mt-4 leading-relaxed">
+            Someone on your team saw a demo. Your competitor mentioned something at a conference.
+            Your accountant swears by a tool. None of it is a plan, because there's no one whose
+            job is turning it into one.
+          </p>
+        </article>
+
+        <article class="spotlight-card bg-stone-50 border border-stone-200 rounded-3xl p-8 reveal" style="transition-delay:.08s">
+          <span class="text-xs uppercase tracking-widest text-[#4e40ca] font-display font-semibold">Problem 02</span>
+          <h3 class="font-display text-2xl font-medium tracking-tight text-stone-900 mt-5">You tried it. It didn't stick.</h3>
+          <p class="text-stone-600 mt-4 leading-relaxed">
+            A subscription three people used for a fortnight. A pilot that impressed everyone and
+            changed nothing. AI that isn't connected to your data, your process and your people is
+            a party trick — and your team worked that out faster than the vendor did.
+          </p>
+        </article>
+
+        <article class="spotlight-card bg-stone-50 border border-stone-200 rounded-3xl p-8 reveal" style="transition-delay:.16s">
+          <span class="text-xs uppercase tracking-widest text-[#4e40ca] font-display font-semibold">Problem 03</span>
+          <h3 class="font-display text-2xl font-medium tracking-tight text-stone-900 mt-5">The hire doesn't pencil out</h3>
+          <p class="text-stone-600 mt-4 leading-relaxed">
+            Someone who can choose the right tools, build them into your operation and keep them
+            running costs six figures in Vancouver or Toronto, takes months to find, and leaves you
+            exposed the day they hand in their notice.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================== THE DEPARTMENT -->
+  <section id="department" class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 lg:py-28 scroll-mt-24">
+
+    <div class="max-w-3xl reveal">
+      <span class="text-xs uppercase tracking-widest text-stone-400 font-display">What you get</span>
+      <h2 class="font-display font-medium tracking-tighter text-stone-900 text-4xl lg:text-6xl leading-[1.02] mt-4">
+        One monthly fee.<br>A whole department.
+      </h2>
+      <p class="text-lg text-stone-600 mt-6 leading-relaxed">
+        Hiring gets you one person and one person's opinion. Working with us gets you all four
+        functions this actually takes — because AI projects rarely fail on the AI. They fail
+        because the data lived in five places, nobody connected it, and no one maintained the
+        thing after launch.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-14 lg:mt-20">
+
+      <article class="spotlight-card bg-stone-900 border border-stone-900 rounded-3xl p-8 lg:p-10 reveal">
+        <div class="flex items-start justify-between gap-6">
+          <div class="w-12 h-12 rounded-2xl bg-[#6355d8] flex items-center justify-center shrink-0">
+            <iconify-icon icon="heroicons:bolt" width="24" class="text-white"></iconify-icon>
+          </div>
+          <span class="font-display text-sm text-stone-600">01</span>
+        </div>
+        <h3 class="font-display text-2xl lg:text-3xl font-medium tracking-tight text-white mt-6">
+          AI doing real work, every month
+        </h3>
+        <p class="text-stone-300 mt-4 leading-relaxed">
+          Not a chatbot in the corner of your website. Work that used to occupy a person all
+          morning — answering and quoting calls, drafting proposals, matching paperwork, writing
+          the reports you read on Monday — handed over properly, one piece at a time.
+        </p>
+        <ul class="mt-6 space-y-2.5 text-sm text-stone-300">
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> A roadmap ranked by what each bottleneck costs you</li>
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> Built on your data, your pricing and your wording</li>
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> A person stays in the loop wherever the stakes are real</li>
+        </ul>
+      </article>
+
+      <article class="spotlight-card bg-white border border-stone-200 rounded-3xl p-8 lg:p-10 reveal" style="transition-delay:.08s">
+        <div class="flex items-start justify-between gap-6">
+          <div class="w-12 h-12 rounded-2xl bg-[#4e40ca] flex items-center justify-center shrink-0">
+            <iconify-icon icon="heroicons:server-stack" width="24" class="text-white"></iconify-icon>
+          </div>
+          <span class="font-display text-sm text-stone-300">02</span>
+        </div>
+        <h3 class="font-display text-2xl lg:text-3xl font-medium tracking-tight text-stone-900 mt-6">
+          The foundation that makes it possible
+        </h3>
+        <p class="text-stone-600 mt-4 leading-relaxed">
+          AI can't rescue a business whose information lives in five disconnected places. So we
+          fix that first: your systems documented, connected and talking to each other, and the
+          subscriptions you forgot you were paying for switched off.
+        </p>
+        <ul class="mt-6 space-y-2.5 text-sm text-stone-600">
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> A written inventory of every system you own</li>
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> Your tools integrated so nothing gets typed twice</li>
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> Licence cleanup — most clients save real money here</li>
+        </ul>
+      </article>
+
+      <article class="spotlight-card bg-white border border-stone-200 rounded-3xl p-8 lg:p-10 reveal" style="transition-delay:.16s">
+        <div class="flex items-start justify-between gap-6">
+          <div class="w-12 h-12 rounded-2xl bg-[#4e40ca] flex items-center justify-center shrink-0">
+            <iconify-icon icon="heroicons:shield-check" width="24" class="text-white"></iconify-icon>
+          </div>
+          <span class="font-display text-sm text-stone-300">03</span>
+        </div>
+        <h3 class="font-display text-2xl lg:text-3xl font-medium tracking-tight text-stone-900 mt-6">
+          Security, privacy and your data
+        </h3>
+        <p class="text-stone-600 mt-4 leading-relaxed">
+          The question every owner asks second: where does our information go? Ours stays in
+          Canada, inside accounts you own, under agreements that forbid using your data to train
+          anyone's model. Plus the unglamorous basics, done properly.
+        </p>
+        <ul class="mt-6 space-y-2.5 text-sm text-stone-600">
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> Canadian data residency, written into the contract</li>
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> Tested backups, MFA and patching on a schedule</li>
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> Access removed the day someone leaves</li>
+        </ul>
+      </article>
+
+      <article class="spotlight-card bg-white border border-stone-200 rounded-3xl p-8 lg:p-10 reveal" style="transition-delay:.24s">
+        <div class="flex items-start justify-between gap-6">
+          <div class="w-12 h-12 rounded-2xl bg-[#4e40ca] flex items-center justify-center shrink-0">
+            <iconify-icon icon="heroicons:academic-cap" width="24" class="text-white"></iconify-icon>
+          </div>
+          <span class="font-display text-sm text-stone-300">04</span>
+        </div>
+        <h3 class="font-display text-2xl lg:text-3xl font-medium tracking-tight text-stone-900 mt-6">
+          Your team brought along with it
+        </h3>
+        <p class="text-stone-600 mt-4 leading-relaxed">
+          The reason most of this fails isn't technical. It's that nobody explained it to the
+          people expected to use it. We train your team on what we build, in their language, and
+          stay on the other end of the phone afterwards.
+        </p>
+        <ul class="mt-6 space-y-2.5 text-sm text-stone-600">
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> Training sessions when anything new goes live</li>
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> One number to call when something looks wrong</li>
+          <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> Monthly report in plain language, not dashboards nobody opens</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="text-center text-stone-500 mt-12 max-w-2xl mx-auto reveal">
+      And one more thing that isn't a feature: someone senior who will tell you
+      <span class="text-stone-900 font-medium">"that one doesn't need AI."</span>
+      Roughly a third of what we recommend is a simpler process or cancelling something you
+      already pay for. You're buying judgement, not enthusiasm.
+    </p>
+  </section>
+
+  <!-- =========================================================== COMPARISON -->
+  <section class="bg-white border-y border-stone-200">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 lg:py-28">
+      <div class="max-w-3xl reveal">
+        <span class="text-xs uppercase tracking-widest text-stone-400 font-display">Honest comparison</span>
+        <h2 class="font-display font-medium tracking-tighter text-stone-900 text-4xl lg:text-6xl leading-[1.02] mt-4">
+          You have two other options.
+        </h2>
+        <p class="text-lg text-stone-600 mt-6 leading-relaxed">
+          Both are legitimate, and plenty of companies pick them. We'd rather put them on the page
+          than pretend they don't exist.
+        </p>
+      </div>
+
+      <div class="mt-14 lg:mt-20 overflow-x-auto reveal">
+        <table class="w-full min-w-[720px] border-separate border-spacing-0">
+          <thead>
+            <tr class="text-left">
+              <th class="font-display text-sm font-medium text-stone-400 uppercase tracking-wider pb-5 pr-6 w-1/4"></th>
+              <th class="font-display text-sm font-medium text-stone-500 pb-5 px-6">Hire someone in-house</th>
+              <th class="font-display text-sm font-medium text-stone-500 pb-5 px-6">Buy the tools and figure it out</th>
+              <th class="font-display text-sm font-medium text-white pb-5 px-6 bg-[#4e40ca] rounded-t-2xl">Applied</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm">
+            <tr>
+              <td class="py-5 pr-6 font-medium text-stone-900 border-t border-stone-200">Monthly cost</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-stone-200">$11,000+ fully loaded, for one person</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-stone-200">Looks cheap. Paid for in your team's evenings</td>
+              <td class="py-5 px-6 text-stone-900 font-medium border-t border-stone-200 bg-[#4e40ca]/5">Flat, from $4,000</td>
+            </tr>
+            <tr>
+              <td class="py-5 pr-6 font-medium text-stone-900 border-t border-stone-200">Working by</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-stone-200">Month five, if the hire works out</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-stone-200">Usually never. The pilot stalls</td>
+              <td class="py-5 px-6 text-stone-900 font-medium border-t border-stone-200 bg-[#4e40ca]/5">First system live in 30 days</td>
+            </tr>
+            <tr>
+              <td class="py-5 pr-6 font-medium text-stone-900 border-t border-stone-200">Connected to your real data</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-stone-200">Depends entirely on who you got</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-stone-200">This is the part that stops everyone</td>
+              <td class="py-5 px-6 text-stone-900 font-medium border-t border-stone-200 bg-[#4e40ca]/5">Where most of the work goes</td>
+            </tr>
+            <tr>
+              <td class="py-5 pr-6 font-medium text-stone-900 border-t border-stone-200">If they're sick or resign</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-stone-200">You stop. Knowledge walks out</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-stone-200">Whoever set it up owns it forever</td>
+              <td class="py-5 px-6 text-stone-900 font-medium border-t border-stone-200 bg-[#4e40ca]/5">A team covers it. Everything documented</td>
+            </tr>
+            <tr>
+              <td class="py-5 pr-6 font-medium text-stone-900 border-t border-stone-200">Still improving in month nine</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-stone-200">If they have time, which they won't</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-stone-200">The subscription renews. Nothing changes</td>
+              <td class="py-5 px-6 text-stone-900 font-medium border-t border-stone-200 bg-[#4e40ca]/5">Something new ships every month</td>
+            </tr>
+            <tr>
+              <td class="py-5 pr-6 font-medium text-stone-900 border-t border-b border-stone-200">Commitment</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-b border-stone-200">Permanent, plus severance</td>
+              <td class="py-5 px-6 text-stone-600 border-t border-b border-stone-200">Cheap to start, expensive to abandon</td>
+              <td class="py-5 px-6 text-stone-900 font-medium border-t border-b border-stone-200 bg-[#4e40ca]/5 rounded-b-2xl">90 days, then month to month</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-stone-400 mt-5">
+        In-house figure is an estimate of salary plus benefits, payroll costs, equipment and recruiting for a technology lead in a major Canadian market.
+      </p>
+    </div>
+  </section>
+
+  <!-- =========================================================== HOW IT WORKS -->
+  <section id="how" class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 lg:py-28 scroll-mt-24">
+    <div class="max-w-3xl reveal">
+      <span class="text-xs uppercase tracking-widest text-stone-400 font-display">How it works</span>
+      <h2 class="font-display font-medium tracking-tighter text-stone-900 text-4xl lg:text-6xl leading-[1.02] mt-4">
+        Four steps. The first one is free.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-14 lg:mt-20">
+
+      <article class="reveal">
+        <div class="flex items-baseline gap-3">
+          <span class="font-display text-5xl font-medium tracking-tighter text-[#4e40ca]">1</span>
+          <span class="text-xs uppercase tracking-widest text-stone-400 font-display">Week 0</span>
+        </div>
+        <h3 class="font-display text-xl font-medium tracking-tight text-stone-900 mt-5">Free AI readiness assessment</h3>
+        <p class="text-stone-600 mt-3 leading-relaxed text-[15px]">
+          Two conversations and a look at how work actually moves through your business. You get
+          a written answer to "where would this genuinely help us, and what's in the way?" —
+          ranked by hours saved. Yours to keep whether or not you hire us.
+        </p>
+      </article>
+
+      <article class="reveal" style="transition-delay:.08s">
+        <div class="flex items-baseline gap-3">
+          <span class="font-display text-5xl font-medium tracking-tighter text-[#4e40ca]">2</span>
+          <span class="text-xs uppercase tracking-widest text-stone-400 font-display">Month 1</span>
+        </div>
+        <h3 class="font-display text-xl font-medium tracking-tight text-stone-900 mt-5">The plan, in order</h3>
+        <p class="text-stone-600 mt-3 leading-relaxed text-[15px]">
+          We agree on a sequence before anyone builds anything: what gets automated first, what
+          needs connecting before it can be, what stays human, and what it's worth. Ordered by
+          payback, not by what's interesting.
+        </p>
+      </article>
+
+      <article class="reveal" style="transition-delay:.16s">
+        <div class="flex items-baseline gap-3">
+          <span class="font-display text-5xl font-medium tracking-tighter text-[#4e40ca]">3</span>
+          <span class="text-xs uppercase tracking-widest text-stone-400 font-display">Month 1–2</span>
+        </div>
+        <h3 class="font-display text-xl font-medium tracking-tight text-stone-900 mt-5">First system live</h3>
+        <p class="text-stone-600 mt-3 leading-relaxed text-[15px]">
+          We start with the one that pays for itself fastest, connect it to your real data, train
+          the people who'll use it, and watch it for a fortnight. You see something working
+          inside the first month — not a slide deck about it.
+        </p>
+      </article>
+
+      <article class="reveal" style="transition-delay:.24s">
+        <div class="flex items-baseline gap-3">
+          <span class="font-display text-5xl font-medium tracking-tighter text-[#4e40ca]">4</span>
+          <span class="text-xs uppercase tracking-widest text-stone-400 font-display">Ongoing</span>
+        </div>
+        <h3 class="font-display text-xl font-medium tracking-tight text-stone-900 mt-5">Run and keep going</h3>
+        <p class="text-stone-600 mt-3 leading-relaxed text-[15px]">
+          We maintain everything we've built — models change, vendors change, your business
+          changes — and ship the next item on the roadmap. One page a month in plain language:
+          what shipped, what it saved, what's next.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- =========================================================== PRICING -->
+  <section id="pricing" class="bg-stone-900 scroll-mt-24">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 lg:py-28">
+
+      <div class="max-w-3xl reveal">
+        <span class="text-xs uppercase tracking-widest text-stone-500 font-display">Pricing</span>
+        <h2 class="font-display font-medium tracking-tighter text-white text-4xl lg:text-6xl leading-[1.02] mt-4">
+          Priced against the hire<br>you were considering.
+        </h2>
+        <p class="text-lg text-stone-400 mt-6 leading-relaxed">
+          Flat monthly fee in Canadian dollars, no setup fee. Software and AI usage costs are
+          passed through at cost, on your own accounts, so you always see what the tools actually
+          charge. 90-day initial term, then month to month — cancel with 30 days' notice and you
+          keep the accounts, the documentation and everything we built.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-14 lg:mt-20 items-start">
+
+        <!-- ESSENTIAL -->
+        <div class="spotlight-card bg-stone-800/60 border border-stone-700 rounded-3xl p-8 lg:p-10 reveal">
+          <h3 class="font-display text-2xl font-medium tracking-tight text-white">Essential</h3>
+          <p class="text-stone-400 mt-2 text-[15px]">For small teams who want to start properly, with one thing that works.</p>
+
+          <div class="mt-8 flex items-baseline gap-2">
+            <span class="font-display text-5xl font-medium tracking-tighter text-white">$4,000</span>
+            <span class="text-stone-400 text-sm">CAD / month</span>
+          </div>
+          <p class="text-xs text-stone-500 mt-2">Up to 15 people</p>
+
+          <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer"
+             class="mt-8 w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-stone-600 text-white transition-colors font-medium px-6 py-3.5 rounded-full text-sm">
+            Book an assessment
+          </a>
+
+          <ul class="mt-8 space-y-3 text-sm text-stone-300">
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> AI readiness assessment and a written roadmap</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> One AI system built, connected and live per quarter</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> Everything we build maintained and monitored</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> Your core systems connected so data isn't retyped</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> Team training and support on what we deliver</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> Monthly report, quarterly review</li>
+          </ul>
+        </div>
+
+        <!-- MANAGED — featured -->
+        <div class="spotlight-card bg-white border border-white rounded-3xl p-8 lg:p-10 shadow-2xl shadow-black/30 lg:-mt-6 reveal" style="transition-delay:.08s">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h3 class="font-display text-2xl font-medium tracking-tight text-stone-900">Managed</h3>
+              <p class="text-stone-600 mt-2 text-[15px]">For companies where growth is capped by manual work.</p>
+
+            </div>
+            <span class="shrink-0 text-[11px] font-semibold uppercase tracking-wider bg-[#4e40ca] text-white px-3 py-1.5 rounded-full">Most chosen</span>
+          </div>
+
+          <div class="mt-8 flex items-baseline gap-2">
+            <span class="font-display text-5xl font-medium tracking-tighter text-stone-900">$8,000</span>
+            <span class="text-stone-500 text-sm">CAD / month</span>
+          </div>
+          <p class="text-xs text-stone-400 mt-2">Up to 40 people</p>
+
+          <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer"
+             class="group mt-8 w-full inline-flex items-center justify-center gap-2 bg-[#4e40ca] hover:bg-[#3a2fb0] active:scale-95 text-white transition-all duration-200 font-medium px-6 py-3.5 rounded-full text-sm shadow-lg shadow-[#4e40ca]/25">
+            Book an assessment
+            <iconify-icon icon="heroicons:arrow-right" width="16" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+          </a>
+
+          <ul class="mt-8 space-y-3 text-sm text-stone-700">
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> <span><span class="font-medium text-stone-900">Everything in Essential</span>, plus:</span></li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> A named technology lead who knows your business</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> Weekly working session with your operations lead</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> A new AI system live every month, not every quarter</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> Voice and inbox agents handling calls, quotes and follow-up</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> 24/7 monitoring with priority response</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#4e40ca] mt-0.5 shrink-0"></iconify-icon> Written AI roadmap, reviewed quarterly with ownership</li>
+          </ul>
+        </div>
+
+        <!-- COMPLETE -->
+        <div class="spotlight-card bg-stone-800/60 border border-stone-700 rounded-3xl p-8 lg:p-10 reveal" style="transition-delay:.16s">
+          <h3 class="font-display text-2xl font-medium tracking-tight text-white">Complete</h3>
+          <p class="text-stone-400 mt-2 text-[15px]">For companies rebuilding how they operate, not just automating a task.</p>
+
+          <div class="mt-8 flex items-baseline gap-2">
+            <span class="font-display text-5xl font-medium tracking-tighter text-white">$12,000</span>
+            <span class="text-stone-400 text-sm">CAD / month</span>
+          </div>
+          <p class="text-xs text-stone-500 mt-2">Up to 100 people</p>
+
+          <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer"
+             class="mt-8 w-full inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-stone-600 text-white transition-colors font-medium px-6 py-3.5 rounded-full text-sm">
+            Book an assessment
+          </a>
+
+          <ul class="mt-8 space-y-3 text-sm text-stone-300">
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> <span><span class="font-medium text-white">Everything in Managed</span>, plus:</span></li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> A dedicated team — named people, in your Slack or Teams</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> Custom software and internal tools built for you</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> Reporting layer so leadership sees real numbers</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> Defined response and resolution SLA</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> Regular on-site time with your team</li>
+            <li class="flex gap-2.5"><iconify-icon icon="heroicons:check" width="16" class="text-[#6355d8] mt-0.5 shrink-0"></iconify-icon> Board-ready quarterly review of what AI is returning</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Custom band -->
+      <div class="mt-6 bg-stone-800/40 border border-stone-700 rounded-3xl p-8 lg:p-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 reveal">
+        <div class="max-w-2xl">
+          <h3 class="font-display text-2xl font-medium tracking-tight text-white">Bigger than that?</h3>
+          <p class="text-stone-400 mt-2 leading-relaxed">
+            More than 100 people, multiple locations, regulated data or an internal team you want
+            us to work alongside — that isn't a plan on a page. Let's have a call and scope it properly.
+          </p>
+        </div>
+        <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer"
+           class="group shrink-0 inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-100 active:scale-95 text-stone-900 transition-all duration-200 font-medium px-7 py-4 rounded-full text-sm">
+          Talk to us
+          <iconify-icon icon="heroicons:arrow-right" width="16" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+        </a>
+      </div>
+
+      <!-- Guarantee -->
+      <div class="mt-14 lg:mt-20 border-t border-stone-800 pt-14 lg:pt-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal">
+        <div class="lg:col-span-5">
+          <h3 class="font-display text-3xl lg:text-4xl font-medium tracking-tighter text-white leading-[1.05]">
+            The first 30 days are ours to prove.
+          </h3>
+        </div>
+        <div class="lg:col-span-7">
+          <p class="text-lg text-stone-400 leading-relaxed">
+            If the plan we deliver in month one isn't something you'd have paid for on its own,
+            don't pay for month one. Keep the document either way.
+          </p>
+          <p class="text-stone-500 mt-4 leading-relaxed">
+            We offer that because we're asking you to trust a category of vendor that, frankly,
+            hasn't earned much trust. The only way past that is to go first.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================== FAQ -->
+  <section id="faq" class="bg-white border-b border-stone-200 scroll-mt-24">
+    <div class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 lg:py-28 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+
+      <div class="lg:col-span-4 reveal">
+        <span class="text-xs uppercase tracking-widest text-stone-400 font-display">Questions</span>
+        <h2 class="font-display font-medium tracking-tighter text-stone-900 text-4xl lg:text-5xl leading-[1.02] mt-4">
+          The things owners actually ask.
+        </h2>
+        <p class="text-stone-600 mt-6 leading-relaxed">
+          Something not covered here? Email
+          <a href="mailto:s@appliedinc.ca" class="text-[#4e40ca] hover:underline">s@appliedinc.ca</a>
+          and you'll get a straight answer, not a brochure.
+        </p>
+      </div>
+
+      <div class="lg:col-span-8 reveal">
+        <div class="divide-y divide-stone-200 border-t border-stone-200">
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6">
+              <h3 class="font-display text-lg lg:text-xl font-medium text-stone-900">Does this mean laying people off?</h3>
+              <iconify-icon icon="heroicons:plus" width="22" class="faq-icon text-[#4e40ca] shrink-0 mt-1 transition-transform duration-300"></iconify-icon>
+            </summary>
+            <p class="text-stone-600 mt-4 leading-relaxed max-w-3xl">
+              That's almost never how it plays out at your size. What our clients get back is
+              capacity — the ability to take on more work, answer faster, and stop hiring for
+              tasks nobody wanted to do anyway. If headcount reduction <em>is</em> your goal,
+              say so on the first call and we'll tell you honestly whether it's realistic.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6">
+              <h3 class="font-display text-lg lg:text-xl font-medium text-stone-900">We're 18 people. Are we too small for this?</h3>
+              <iconify-icon icon="heroicons:plus" width="22" class="faq-icon text-[#4e40ca] shrink-0 mt-1 transition-transform duration-300"></iconify-icon>
+            </summary>
+            <p class="text-stone-600 mt-4 leading-relaxed max-w-3xl">
+              No — that's squarely Essential. Under about 10 people, a monthly department is
+              usually premature, and we'll tell you that and point you to a one-time assessment
+              instead of selling you a retainer you don't need yet.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6">
+              <h3 class="font-display text-lg lg:text-xl font-medium text-stone-900">Who owns our accounts, data and software?</h3>
+              <iconify-icon icon="heroicons:plus" width="22" class="faq-icon text-[#4e40ca] shrink-0 mt-1 transition-transform duration-300"></iconify-icon>
+            </summary>
+            <p class="text-stone-600 mt-4 leading-relaxed max-w-3xl">
+              You do. Every account is in your company's name, every system is documented, and
+              anything we build belongs to you. It's in the agreement from day one. A provider
+              who holds your logins hostage isn't a partner, they're a risk.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6">
+              <h3 class="font-display text-lg lg:text-xl font-medium text-stone-900">What if we want to build an internal team later?</h3>
+              <iconify-icon icon="heroicons:plus" width="22" class="faq-icon text-[#4e40ca] shrink-0 mt-1 transition-transform duration-300"></iconify-icon>
+            </summary>
+            <p class="text-stone-600 mt-4 leading-relaxed max-w-3xl">
+              That's a healthy outcome and it happens. Because we document as we go, handover is
+              a real process and not a hostage negotiation — and we'll help you write the job
+              description and sit in on the interviews. Plenty of clients keep us on for the
+              roadmap after they hire someone to run the day to day.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6">
+              <h3 class="font-display text-lg lg:text-xl font-medium text-stone-900">How much of our time does this take?</h3>
+              <iconify-icon icon="heroicons:plus" width="22" class="faq-icon text-[#4e40ca] shrink-0 mt-1 transition-transform duration-300"></iconify-icon>
+            </summary>
+            <p class="text-stone-600 mt-4 leading-relaxed max-w-3xl">
+              About an hour a week from one person who knows how the work really happens, plus a
+              short training session when something new goes live. Considerably less than
+              onboarding and managing a new employee.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6">
+              <h3 class="font-display text-lg lg:text-xl font-medium text-stone-900">Where does our data go, and is it training someone's model?</h3>
+              <iconify-icon icon="heroicons:plus" width="22" class="faq-icon text-[#4e40ca] shrink-0 mt-1 transition-transform duration-300"></iconify-icon>
+            </summary>
+            <p class="text-stone-600 mt-4 leading-relaxed max-w-3xl">
+              Canada, by default, in accounts your company owns. We use business agreements that
+              prohibit your data being used to train anyone's model, and we'll put both
+              commitments in the contract rather than asking you to take our word for it. We're a
+              Canadian company working within Canadian privacy legislation.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6">
+              <h3 class="font-display text-lg lg:text-xl font-medium text-stone-900">Which AI do you use?</h3>
+              <iconify-icon icon="heroicons:plus" width="22" class="faq-icon text-[#4e40ca] shrink-0 mt-1 transition-transform duration-300"></iconify-icon>
+            </summary>
+            <p class="text-stone-600 mt-4 leading-relaxed max-w-3xl">
+              Whichever one is right for the job, and we're not on commission from any of them.
+              This field moves every few months — part of what you're paying for is that when
+              something better or cheaper arrives, we move you onto it and you never have to
+              think about it. Being locked to one vendor is how companies end up stuck.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6">
+              <h3 class="font-display text-lg lg:text-xl font-medium text-stone-900">Can you come on-site?</h3>
+              <iconify-icon icon="heroicons:plus" width="22" class="faq-icon text-[#4e40ca] shrink-0 mt-1 transition-transform duration-300"></iconify-icon>
+            </summary>
+            <p class="text-stone-600 mt-4 leading-relaxed max-w-3xl">
+              Yes in Metro Vancouver, where we're based. Elsewhere in Canada we work remotely for
+              day-to-day support and arrange on-site visits for the work that genuinely requires
+              hands on hardware.
+            </p>
+          </details>
+
+          <details class="group py-6">
+            <summary class="flex items-start justify-between gap-6">
+              <h3 class="font-display text-lg lg:text-xl font-medium text-stone-900">We've been burned by a technology vendor before.</h3>
+              <iconify-icon icon="heroicons:plus" width="22" class="faq-icon text-[#4e40ca] shrink-0 mt-1 transition-transform duration-300"></iconify-icon>
+            </summary>
+            <p class="text-stone-600 mt-4 leading-relaxed max-w-3xl">
+              Most of our clients have been. It's exactly why we bill monthly and cancellable
+              instead of asking for a large project deposit, and why you own everything from the
+              start. We'd rather earn month ten than lock you into it.
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================== FINAL CTA -->
+  <section class="max-w-[1600px] mx-auto px-6 lg:px-12 py-20 lg:py-28 text-center">
+    <div class="max-w-3xl mx-auto reveal">
+      <h2 class="font-display font-medium tracking-tighter text-stone-900 text-4xl lg:text-6xl leading-[1.02]">
+        Start with the assessment.<br>Decide after.
+      </h2>
+      <p class="text-lg text-stone-600 mt-6 leading-relaxed">
+        Two conversations, no cost, no obligation. You'll leave with a written answer to the
+        question you've been sitting on: where would this actually help us, what's in the way,
+        and what would we do first. Useful to you even if you never hire us.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center pt-9">
+        <a href="https://tidycal.com/appliedai/lets-talk-about-your-app" target="_blank" rel="noopener noreferrer"
+           class="group inline-flex items-center justify-center gap-2 bg-[#4e40ca] hover:bg-[#3a2fb0] active:scale-95 text-white transition-all duration-200 font-medium px-8 py-4 rounded-full text-sm shadow-lg shadow-[#4e40ca]/25">
+          Book a Free AI Assessment
+          <iconify-icon icon="heroicons:arrow-right" width="16" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+        </a>
+        <a href="mailto:s@appliedinc.ca"
+           class="inline-flex items-center justify-center gap-2 bg-white hover:bg-stone-50 border border-stone-200 text-stone-900 transition-colors font-medium px-8 py-4 rounded-full text-sm">
+          Email us instead
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-16 lg:mt-24 reveal">
+      <p class="text-sm uppercase tracking-widest text-stone-400 mb-4">Or reach us directly</p>
+      <a href="mailto:s@appliedinc.ca"
+         class="inline-block text-4xl sm:text-6xl lg:text-8xl font-display font-medium tracking-tight text-stone-900 hover:text-[#4e40ca] transition-colors break-all">
+        s@appliedinc.ca
+      </a>
+    </div>
+  </section>
+
+  <!-- =========================================================== FOOTER -->
+  <footer class="max-w-[1600px] mx-auto px-6 lg:px-12 pb-8">
+    <div class="border border-stone-200 rounded-3xl p-8 lg:p-12 shadow-sm bg-stone-50">
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 justify-between">
+        <div class="lg:w-1/3 space-y-5">
+          <span class="text-2xl lg:text-3xl font-semibold tracking-tighter font-display">
+            Applied<span class="text-[#4e40ca]">AI</span> Networks Inc.
+          </span>
+          <p class="text-sm text-stone-500 font-display max-w-sm leading-relaxed">
+            Outsourced AI departments for Canadian businesses
+          </p>
+          <p class="text-sm text-stone-500 font-display max-w-sm leading-relaxed">
+            Based in Vancouver, Canada
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-10 lg:gap-20 text-sm">
+          <div class="space-y-4">
+            <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-400 font-display">This service</h3>
+            <ul class="space-y-3 text-stone-600">
+              <li><a href="#department" class="hover:text-stone-900 transition-colors">What's included</a></li>
+              <li><a href="#how" class="hover:text-stone-900 transition-colors">How it works</a></li>
+              <li><a href="#pricing" class="hover:text-stone-900 transition-colors">Pricing</a></li>
+              <li><a href="#faq" class="hover:text-stone-900 transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-400 font-display">Company</h3>
+            <ul class="space-y-3 text-stone-600">
+              <li><a href="index.html" class="hover:text-stone-900 transition-colors">Home</a></li>
+              <li><a href="about.html" class="hover:text-stone-900 transition-colors">About Us</a></li>
+              <li><a href="https://www.linkedin.com/company/applied-ai-solutions-inc/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-stone-900 transition-colors"><iconify-icon icon="simple-icons:linkedin" width="14"></iconify-icon> LinkedIn</a></li>
+            </ul>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-xs uppercase font-semibold tracking-wider text-stone-400 font-display">Legal</h3>
+            <ul class="space-y-3 text-stone-600">
+              <li><a href="privacy.html" class="hover:text-stone-900 transition-colors">Privacy Policy</a></li>
+              <li><a href="terms.html" class="hover:text-stone-900 transition-colors">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-stone-200 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-400">
+        <p>© 2026 Applied AI Networks Inc. All rights reserved.</p>
+        <p>950 Cambie Street, Office 1801, Vancouver, BC V6B 5X5</p>
+      </div>
+    </div>
+  </footer>
+
+</main>
+</div>
+
+<script>
+  // Scroll reveal
+  (function () {
+    var items = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  })();
+
+  // Card spotlight follows the cursor
+  document.querySelectorAll('.spotlight-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--mouse-y', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  // One FAQ open at a time
+  var faqs = document.querySelectorAll('#faq details');
+  faqs.forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (!d.open) return;
+      faqs.forEach(function (other) { if (other !== d) other.open = false; });
+    });
+  });
+</script>
+
+</body>
+</html>
